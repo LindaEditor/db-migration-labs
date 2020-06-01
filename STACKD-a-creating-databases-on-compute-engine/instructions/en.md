@@ -194,7 +194,7 @@ apt-get update
 apt-get install -y mysql-server
 ```
 
-1.  Scroll to the bottom, but ***do not*** click on the Create button, instead click on the **command line** link at the bottom.<p>The resulting screen shows you the gcloud CLI command you can use to automate this server's creation as you configured it.</p><p>Copy the command to the clipboard.</p> 
+1.  Scroll to the bottom, but ***do not*** click on the Create button, instead click on the **command line** link at the bottom.<p>The resulting screen shows you the gcloud CLI command you can use to automate this server's creation as you configured it.</p><p>Copy the command to the clipboard and close the popup.</p> 
 
 1.  Click on the **Activate Cloud Shell** icon in the upper right of the console. ![Cloud Shell](img/CloudShell.png) <p>The Cloud Shell terminal will open in a pane at the bottom.</p>
 
@@ -212,7 +212,7 @@ gcloud compute ssh db-server --zone=us-central1-a
 sudo systemctl status mysql
 ```
 
-<aside><p><strong>Congratulations!</strong> You created database servers running on Google Cloud Compute Engine. You created both Linux and Windows servers and will use the CLI to automate the creation of a server. </p></aside>
+<aside><p><strong>Congratulations!</strong> You created database servers running on Google Cloud Compute Engine. You created both Linux and Windows servers and have used the CLI to automate the creation of a server. </p></aside>
 
 ![[/fragments/endqwiklab]]
 
