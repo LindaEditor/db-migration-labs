@@ -151,7 +151,7 @@ You just create a MySQL database server using Ubuntu Linux.
 CREATE DATABASE petsdb; 
 ```
 
-1.  In the databases dropdown to the left of the Execute button, select your `petsdb` database. Now enter the following to create a table. Highlight just that command, making sure not to highlight the previous command, and execute it. 
+1.  In the databases dropdown to the left of the Execute button, select your `petsdb` database. Now enter the following to create a table. Highlight just the following commands, making sure to exclude the CREATE DATABASE petsdb, and execute it. 
 
 ```
 USE petsdb;
