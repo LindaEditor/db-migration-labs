@@ -123,13 +123,13 @@ You just create a MySQL database server using Ubuntu Linux.
 
 1.  Once you get logged onto the Windows server, you can close the Server Manager Dashboard.
 
-1.  Click on the Start menu and expand the **Microsoft SQL Server 2019** folder, then select **SQL Server 2019 Installation Center**.
+1.  Click on the Start menu and expand the **Microsoft SQL Server 2019** folder, then select **SQL Server 2019 Installation Center**. You may be prompted with a popup asking if you want to allow this app to make changes to your device. Answer yes.
 
-1.  Click on the **Installation** page in the resulting program and then select Install SQL Server Management tools.
+1.  Click on the **Installation** page in the resulting program and then select Install SQL Server Management tools. 
 
-1.  This opens a web page in Internet Explorer. You will be given mutiple security warnings in Internet Explorer. Add each site to the list of trusted sites. If you are prompted to use recommended security settings for Internet Explorer, just click the **Ask me later** button. Click the **Download Sql Server Management Studio** link. Again you might have to add this site to the list of trusted sites. After adding the site, you may have to click the download link again.
+1.  This opens a web page in Internet Explorer. You will be given mutiple security warnings in Internet Explorer. Add each site to the list of trusted sites. If you are prompted to use recommended security settings for Internet Explorer, just click the **Ask me later** button. Click the **Download SQL Server Management Studio** link. Again you might have to add this site to the list of trusted sites. After adding the site, you may have to click the download link again, it may also simply say **Download SSMS**. If prompted tell it to save it.
 
-1.  Once the installation program is downloaded, run it and follow the instructions. <p>When the installation completes, click on the Start Menu and type `SSMS`. Click on the **SSL Server Management Studio** shortcut to run the program.</p>
+1.  Once the installation program is downloaded, run it and follow the instructions. <p>When the installation completes, click on the Start Menu and type `SSMS`. Click on the **SQL Server Management Studio** shortcut to run the program.</p> Also, close the browser and the **SQL Server 2019 Installation Center**.
 
 1.  In the Connect to Server dialog, the Server name should be `SQL-SERVER-DB`. Click the **Connect** button.
 
@@ -139,11 +139,11 @@ You just create a MySQL database server using Ubuntu Linux.
 
 1.  Right-click on the server again in Object Explorer and select **Restart**. Choose **Yes** when prompted. 
 
-1.  Once the server restarts, expand the **Security** and **Logins** branch of the treeview. Right-click on the Logins branch and select **New Login**. 
+1.  Once the server restarts, expand the **Security** and **Logins** branch of the tree view. Right-click on the Logins branch and select **New Login**. 
 
-1.  Enter your first name in the **Login name** text box. Click on the **SQL Server authentication** radio button. Enter a password you will remember (*paste it in a text file if you like*).<p>Uncheck the **User must change password at next login** button.<p> Click on the **Server roles** page. Select the `dbcreator`, `serveradmin` and `sysadmin` roles.</p><p>Click on the **User Mapping** page. Select all the databases.</p><p>Click the OK button to create the Login.</p>
+1.  Enter your first name in the **Login name** text box. Click on the **SQL Server authentication** radio button. Enter a password you will remember (*paste it in a text file if you like*).<p>Uncheck the **Enforce password policy** button.<p>Uncheck the **User must change password at next login** button.<p> Click on the **Server roles** page. Select the `dbcreator`, `serveradmin` and `sysadmin` roles.</p><p>Click on the **User Mapping** page. Select all the databases.</p><p>Click the OK button to create the Login.</p>
 
-1.  Let's test the login you just create. In Object Explorer, click the **Connect** button and select **Database Engine**. Select **SQL Seerver Authentication** from the Authentication dropdown. Enter your username and password and click **Connect**. It should work.
+1.  Let's test the login you just created. In Object Explorer, click the **Connect** button and select **Database Engine**. Select **SQL Server Authentication** from the Authentication dropdown. Enter your username and password and click **Connect**. It should work.
 
 1.  Click the **New Query** button in the toolbar. Enter the following SQL to create a database and click the **Execute** button. 
 
@@ -151,7 +151,7 @@ You just create a MySQL database server using Ubuntu Linux.
 CREATE DATABASE petsdb; 
 ```
 
-1.  In the databases dropdown to the left of the Execute button, select your `petsdb` database. Now enter the following to create a table and execute it. 
+1.  In the databases dropdown to the left of the Execute button, select your `petsdb` database. Now enter the following to create a table. Highlight just that command, making sure not to highlight the previous command, and execute it. 
 
 ```
 USE petsdb;
