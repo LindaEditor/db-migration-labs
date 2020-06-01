@@ -52,7 +52,7 @@ sudo apt install -y mysql-server
 sudo mysql_secure_installation
 ```
 
-7.  Enter the password you create a moment ago. Read each prompt, but say `No` to all of them.
+7.  Enter the password you created a moment ago. Read each prompt, but say `No` to all of them.
 
 1.  Now, let's try logging into the database. Enter the following command and when prompted enter your password.
 
