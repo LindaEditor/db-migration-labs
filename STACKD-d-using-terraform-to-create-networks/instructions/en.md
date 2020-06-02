@@ -309,7 +309,7 @@ output "test-server-linux-internal-ip" {
 
 1. When the commands complete you should see the VM name, and internal and external IP addresses. From the Cloud Shell terminal make sure you can ping the external IP address of that machine. 
 
-1.  In the Console, go to the Compute Engine service. You should see the VM you just created. Click the SSH button to make sure your firewall rule works. 
+1.  In the Console, go to the Compute Engine service. You should see the VM you just created. Click the SSH button to make sure your firewall rule works. Exit the ssh session.
 
 1.  Run the Terraform destroy command to delete everything you created thus far. 
 
