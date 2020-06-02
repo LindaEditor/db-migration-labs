@@ -51,7 +51,7 @@ __OPEN__ to select your project.
 
 1.  Note the connection command is already entered at the prompt. Hit Enter to run the command. <p>It will take a little while for Cloud Shell's IP address to be whitelisted by the Cloud SQL network. Enter your password when prompted.
 
-1.  To see the databases type the following (*that's a backslash and the letter l*). 
+1.  To see the databases type the following (*that's a backslash and the lower case letter L*). 
 
 ```
 \l
