@@ -305,9 +305,9 @@ output "test-server-linux-internal-ip" {
 
 <aside><p><strong>Note: </strong>The output variables will return the name, and internal and external IP addresses for the machine created. Also, this machine is tagged with the "allow-ssh" tag, so you can connect to it. Lastly, take a look at the code in the network_interface section that configures this machine to be in the public network your created earlier.</p></aside>
 
-1.  Run the Terrafom plan and apply commands as you did earlier to create this machine. 
+1.  Run the Terraform plan and apply commands as you did earlier to create this machine. If an errors appears you may need to run terraform ini again before running the other two commands.
 
-1. When the command completes you should see the VM name, and internal and external IP addresses. From the Cloud Shell terminal make sure you can ping the external IP address of that machine. 
+1. When the commands complete you should see the VM name, and internal and external IP addresses. From the Cloud Shell terminal make sure you can ping the external IP address of that machine. 
 
 1.  In the Console, go to the Compute Engine service. You should see the VM you just created. Click the SSH button to make sure your firewall rule works. 
 
