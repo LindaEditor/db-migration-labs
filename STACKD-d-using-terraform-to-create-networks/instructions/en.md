@@ -51,6 +51,7 @@ cd terraform-networks
 ```
 touch provider.tf
 touch terraform.tfvars
+touch test-server-linux.tf
 touch variables.tf
 touch vpc-network-public.tf
 touch vpc-firewall-rules-public.tf
