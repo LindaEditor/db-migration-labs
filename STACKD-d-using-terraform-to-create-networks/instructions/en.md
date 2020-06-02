@@ -131,7 +131,7 @@ resource "google_compute_subnetwork" "public-subnet_1" {
 }
 ```
 
-<aside><p><strong>Note: </strong>The above Terraform code creates a VPC with one subnet. In the subnet, notice the two vaiables for `ip_cidr_range` and `region`. Also notice how the  `network` property refers back the the VPC create before the subnet.</p></aside>
+<aside><p><strong>Note: </strong>The above Terraform code creates a VPC with one subnet. In the subnet, notice the two variables for `ip_cidr_range` and `region`. Also notice how the  `network` property refers back the the VPC created before the subnet.</p></aside>
 
 
 1.  Let's see if this works up to this point. In the Navigation menu of the Console ( ![Menu](img/menu.png) ), click on **VPC network**. At this point you should have one network named `default`
