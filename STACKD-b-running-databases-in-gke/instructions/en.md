@@ -131,7 +131,7 @@ spec:
 *  Starting at line 26, an environment variable is created for the database root password using the secret you created earlier. There are also variables to create a test user with a simple password. 
 *  In the last line, notice the disk space you allocated in the previous file is used. 
 
-1.  The database needs a service so it can be accesses. Create a third file called `service.yaml` and enter the followng into it. 
+1.  The database needs a service so it can be accessed. Create a third file called `service.yaml` and enter the followng into it. 
 
 ```
 apiVersion: v1
