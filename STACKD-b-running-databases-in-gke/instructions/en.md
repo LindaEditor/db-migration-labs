@@ -165,7 +165,7 @@ kubectl apply -f service.yaml
 kubectl get pods
 ```
 
-1. The database is only accessible from inside the cluster. At this point there are no client applications. So, you will just access the pod with the database and see if it is running. <p>From the last command, copy the name of the pod to the clipboard. It will begin with `mysql-deployment-` followed by a unique string. Enter the following command, ***but replace the pod name with your pod's name***.
+1. The database is only accessible from inside the cluster. At this point there are no client applications. So, you will just access the pod with the database and see if it is running. <p>Copy the name of the pod obtained from the last command to the clipboard. It will begin with `mysql-deployment-` followed by a unique string. Enter the following command, ***but replace the pod name with your pod's name***.
 
 ```
 kubectl exec -it mysql-deployment-76fdc44468-rfhbp /bin/bash
