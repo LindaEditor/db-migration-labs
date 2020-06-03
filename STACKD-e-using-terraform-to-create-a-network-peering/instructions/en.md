@@ -99,7 +99,7 @@ resource "google_compute_network_peering" "private-public" {
 }
 ```
 
-<aside><p><strong>Note: </strong>A peering request has to be made from both networks. That is why there are two network  peerings, one from the public network to the private network and one the opposite. </p></aside>
+<aside><p><strong>Note: </strong>A peering request has to be made from both networks. That is why there are two network  peerings, one from the public network to the private network and one in the opposite direction. </p></aside>
 
 1.  Switch back to the Cloud Shell terminal and enter the following to create the peering.  
 
