@@ -45,7 +45,7 @@ git clone https://github.com/drehnstrom/db-migration-course
 1.  Change to the following folder.
 
 ```
-cd ~/db-migration-course/terraform-create-peering/
+cd ~/db-migration-course/terraform-networks/
 ```
 
 1.  Type `ls` and you will see this folder has the Terraform files to create two networks and a couple test servers. 
@@ -60,7 +60,7 @@ terraform plan
 terraform apply -auto-approve
 ```
 
-1.  If you get an error about the API being disabled, just wait a moment and try it again. When the Terrform process completes, in the Navigation menu ( ![Menu](img/menu.png) ), click on **Compute Engine**.
+1.  When the Terrform process completes, in the Navigation menu ( ![Menu](img/menu.png) ), click on **Compute Engine**.
 
 1.  You should have two machines. One in the public network and one in the private network.<p>Copy the internal IP address of the private machine to the clipboard (*it should be 10.2.2.2*). </p><p>Then, SSH into the one with the name that begins with `public-test-server-`.</p>
 
