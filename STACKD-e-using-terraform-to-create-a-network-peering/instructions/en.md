@@ -106,7 +106,7 @@ resource "google_compute_network_peering" "private-public" {
 ```
 terraform apply -auto-approve
 ```
-1.  After the command completes, go back to the Console. Navigate away from the VPC network peering page, and then back to it, to refresh the view. You should see the peering is created and active. 
+1.  If you get an error about the API being disabled, just wait a moment and try it again. After the command completes, go back to the Console. Navigate away from the VPC network peering page, and then back to it, to refresh the view. You should see the peering is created and active. 
 
 1.  Switch back to the SSH window of the public test server and your ping command should have started working. Type **Ctrl+ C** to stop the command and then type `exit` to close the SSH session. 
 
