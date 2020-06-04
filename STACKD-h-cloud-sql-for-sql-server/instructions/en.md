@@ -188,7 +188,7 @@ go
 
 1. Let's make a change to one of the records by issueing the following command
 ```
-[AdventureWorks].[SalesLT].[Customer] SET CompanyName = 'Google' WHERE CustomerID = 1
+UPDATE [AdventureWorks].[SalesLT].[Customer] SET CompanyName = 'Google' WHERE CustomerID = 1
 go
 ```
 
