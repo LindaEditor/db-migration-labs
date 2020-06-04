@@ -188,7 +188,7 @@ go
 
 1. Go back to the **Overview** page and this time click the Fallback button to return to the main database. 
 
-1. Lastly, you can delete the database. From the **Overview** page click the **Delete* button and follow the instructions. <p>You can also go to the **Compute Engine** service and delete the client machine.
+1. Lastly, you can delete the database. From the **Overview** page click the **Delete** button and follow the instructions. <p>You can also go to the **Compute Engine** service and delete the client machine.
 
 
 <aside><p><strong>Congratulations! </strong>You have created a SQL Server database using Google Cloud SQL. You enabled high availability and deployed it securely with only a private IP address. You then loaded a sample database into it and connected to the database using a client machine. You also performed backup and restore operations and tested high availability by triggering a failover. </p></aside>
