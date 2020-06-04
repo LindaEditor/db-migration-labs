@@ -233,7 +233,7 @@ Password:
 
 1.  Now you will create a SQL Server user login. Click the Start menu of the SQL Server and type "ssms", then select the shortcut to Microsoft SQL Server Management Studio.
 
-1.  Once, Management Studo starts, the local server name should be filled pre-populated. Click the **Connect** button to log into it. 
+1.  Once, Management Studo starts, the local server name should already be filled in. Click the **Connect** button to log into it. 
 
 1.  In Object Explorer, right-click on the Server at the top and select **Properties**. <p>Click on the **Security** tab, and then select the **SQL Server and Windows authentication mode** radio button. </p><p>Click the **OK** buttonandread the message. 
 
