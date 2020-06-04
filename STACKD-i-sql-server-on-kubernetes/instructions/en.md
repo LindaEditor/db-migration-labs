@@ -71,7 +71,7 @@ cd ~/db-migration-course/sql-server-on-gke
 
 1. Select the `volume-claims.yaml` file. This file configures three volumes: one for the SQL Server software, one for the data and one for the transaction logs.
 
-1.  Select the `mssql-deployment.yaml` file. This file configures the SQL Server deployment. <p>On line 15 the Microsoft SQL Server image is specified. <p>**Note** the environment variables startng at line 18 thru 29. These variables accept the license agreement, set the password for the SA account using a Kubernetes secret and specify the paths required by the database.<p>Starting at line 38, the volumes from the previous file are used. 
+1.  Select the `mssql-deployment.yaml` file. This file configures the SQL Server deployment. <p>On line 15 the Microsoft SQL Server image is specified. <p>**Note** the environment variables starting at line 18 thru 29. These variables accept the license agreement, set the password for the SA account using a Kubernetes secret and specify the paths required by the database.<p>Starting at line 38, the volumes from the previous file are used. 
 
 1.  Select the `mssql-service.yaml` file. The service provides access to the database. In this case, the service is of the type `LoadBalancer`. <p>A load balancer will create a public IP address making the database available outside the cluster. If you removed the last line, the service would have only a private IP address, thus making the database only available from within the cluster. 
 
