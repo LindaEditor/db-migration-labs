@@ -165,14 +165,14 @@ terraform apply -auto-approve
 
 1.  When the Terrform process completes, in the Navigation menu ( ![Menu](img/menu.png) ), click on **Compute Engine**. You should have a number of machines listed. 
 
-1.  Find the `mysql-server-` machine, and make note of its internal IP address (*it is probably 10.2.2.2*). 
+1.  Find the `mysql-server-` machine, and make note of its internal IP address (*it is probably 10.2.2.3*). 
 
 1.  Find the `mysql-client-` machine, and click the SSH button next to it to connect to that machine. 
 
 1. Once you're connected to the client, then use the following command to SSH from that machine to the server making sure the IP address is correct. <p>When prompted, say 'yes'.</p> 
 
 ```
-ssh 10.2.2.2
+ssh 10.2.2.3
 ```
 
 <aside><p><strong>Note: </strong>At this point you need to install MySQL on the server. The problem is, because the Server has no External IP address, it has no access to the internet. So, you can't run the command to install MySQL. You will fix that now by adding a NAT using the Google Cloud NAT service. </p></aside>
@@ -290,7 +290,7 @@ sudo apt-get install -y mysql-client
 1. Now try to connect to your database using the following command.
 
 ```
-mysql -h 10.2.2.2 -u fred -p'password'
+mysql -h 10.2.2.3 -u fred -p'password'
 ```
 
 1. You should get conected. At this point there's no database, so there's nothing else to do, but you have a complete solution in place. <p>Your database server is in a secure network with no public access. You have a Linux machine in the public network that can be used to administrate the database, and connect to the machine using the MySQL client software.
