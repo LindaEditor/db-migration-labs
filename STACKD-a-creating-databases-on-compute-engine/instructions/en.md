@@ -141,7 +141,7 @@ You just create a MySQL database server using Ubuntu Linux.
 
 1.  Once the server restarts, expand the **Security** and **Logins** branch of the tree view. Right-click on the Logins branch and select **New Login**. 
 
-1.  Enter your first name in the **Login name** text box. Click on the **SQL Server authentication** radio button. Enter a password you will remember (*paste it in a text file if you like*).<p>Uncheck the **Enforce password policy** button.<p>Uncheck the **User must change password at next login** button.<p> Click on the **Server roles** page. Select the `dbcreator`, `serveradmin` and `sysadmin` roles.</p><p>Click on the **User Mapping** page. Select all the databases.</p><p>Click the OK button to create the Login.</p>
+1.  Enter your first name in the **Login name** text box. Click on the **SQL Server authentication** radio button. Enter a password you will remember (*paste it in a text file if you like*).<p>Uncheck the **Enforce password policy** button.<p>Uncheck the **User must change password at next login** button.<p> Click on the **Server roles** page. Select the `sysadmin` role.</p><p>Click on the **User Mapping** page. Select all the databases.</p><p>Click the OK button to create the Login.</p>
 
 1.  Let's test the login you just created. In Object Explorer, click the **Connect** button and select **Database Engine**. Select **SQL Server Authentication** from the Authentication dropdown. Enter your username and password and click **Connect**. It should work.
 
