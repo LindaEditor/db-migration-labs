@@ -184,9 +184,15 @@ go
 
 1.  Enter the database name as instructed and click the **Trigger Failover** button.  *It will take about a minute for the failover operation to finish*.
 
-1.  When the operation completes, go back to your client and try to run your query again.
+1.  When the operation completes, go back to your client and try to run your query again. 
 
-1. Go back to the **Overview** page and this time click the Fallback button to return to the main database. 
+1. Let's make a change to one of the records by issueing the following command
+```
+[AdventureWorks].[SalesLT].[Customer] SET CompanyName = 'Google' WHERE CustomerID = 1
+go
+```
+
+1. Go back to the **Overview** page and this time click the Fallback button to return to the main database and confirm that the change made on the FailOver is reflected on the main server.
 
 1. Lastly, you can delete the database. From the **Overview** page click the **Delete** button and follow the instructions. <p>You can also go to the **Compute Engine** service and delete the client machine.
 
