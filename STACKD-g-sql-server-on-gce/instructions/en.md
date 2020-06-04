@@ -239,7 +239,7 @@ Password:
 
 1.  To restart the SQL Server, right-click on it again in Object Explorer and select **Restart**. Agree when prompted. Give the server a few seconds to restart, you might have to click the Refresh button to see that it is restarted. 
 
-1.  In Object Explorer, double-click on Security and then Logins to expand them. Right-click on **Logins** and select **New  Login**.  <p>Specify a username in the Login-name text box.</p><p>Select the **SQL Server authentiation** radio button.</p><p>Set the passwordand uncheck the **Enforce password policy** check box. </p><p>Click to **OK** button to create the login.
+1.  In Object Explorer, double-click on Security and then Logins to expand them. Right-click on **Logins** and select **New  Login**.  <p>Specify a username in the Login-name text box.</p><p>Select the **SQL Server authentiation** radio button.</p><p>Set the password and uncheck the **Enforce password policy** check box. </p><p>Click to **OK** button to create the login.
 
 1.  Record the username and passoword for the SQL Server user you just created in your text file.
 
@@ -249,7 +249,7 @@ Password:
 
 1.  Click the **SSH** button next to the `sql-client-` machine. 
 
-1. You will now install the SQL Server client software on this machine and test the Login you just created. Once your SSH connection is established enter the follwing commands (***say yes each time you are prompted***).
+1. You will now install the SQL Server client software on this machine and test the Login you just created. Once your SSH connection is established enter the following commands (***say yes each time you are prompted***).
 
 ```
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
