@@ -81,7 +81,7 @@ cd ~/db-migration-course/sql-server-on-gke
 kubectl create secret generic mssql-secrets --from-literal=SA_PASSWORD="Passw0rd!"
 ```  
 
-<aside><p><strong>Note: </strong>The password has to be a strong one, or the deployment will fail when setting the password for the `sa` account. </p></aside>
+<aside><p><strong>Note: </strong>The password has to be a strong one, or the deployment will fail when setting the password for the 'sa' account. </p></aside>
 
 1. Enter the following commands to deploy the database. 
 
