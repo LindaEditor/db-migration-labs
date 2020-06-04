@@ -45,7 +45,7 @@ __OPEN__ to select your project.
 
 1.  Expand the **Backups, recovery and high availability** section. Check the box to enable automatic backups. <p>Also, select the **High availability** radio button. *This will create a failover replica in another zone in the same region.*
 
-1. Finally, click the **Create** button to create your database server. <p>*This will take a few minutes, but you can continue with the next couple steps while you are waiting*. 
+1. Finally, click the **Create** button to create your database server. <p>*This will take a few minutes, but you can continue with the next few steps while you are waiting*. 
 
 ## Task 2. Perform backup and restore operations
 
