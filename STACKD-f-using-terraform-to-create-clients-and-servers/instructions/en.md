@@ -6,7 +6,7 @@ In this lab, you will provision a Linux virtual machine in a private network to 
 
 ### Objectives
 
-In this lab, you will learn how to perform the following tasks:
+In this lab, you will learn how to perform the following tasks: 
 
 *   Create Client and Server VMs
 *   Administrate your Database Server
