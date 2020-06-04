@@ -89,7 +89,7 @@ output "tsql-server-windows-internal-ip" {
 }
 ```
 
-1. Now, you will create a Windows machine in the public networkthat use can use to administrate that SQL Server. Add a file named `vm-windows-admin.tf` and paste the following Terraform code into it. 
+1. Now, you will create a Windows machine in the public network that use can use to administrate that SQL Server. Add a file named `vm-windows-admin.tf` and paste the following Terraform code into it. 
 
 ```
 # Create VM Windows Admin
