@@ -56,7 +56,7 @@ cd ~/db-migration-course/terraform-sql-server-on-gce/
 1. First, you will create a SQL Server machine n the private network. Add a file named `vm-sql-server-windows.tf` and paste the following Terraform code into it. 
 
 ```
-# Create Windows SLQ Server in Private VPC
+# Create Windows SQL Server in Private VPC
 resource "google_compute_instance" "sql-server-windows" {
   name         = "sql-server-windows-${random_id.instance_id.hex}"
   machine_type = "n1-standard-2"
@@ -242,6 +242,8 @@ Password:
 1.  In Object Explorer, double-click on Security and then Logins to expand them. Right-click on **Logins** and select **New  Login**.  <p>Specify a username in the Login-name text box.</p><p>Select the **SQL Server authentication** radio button.</p><p>Set the password and uncheck the **Enforce password policy** check box. </p><p>Click to **OK** button to create the login.
 
 1.  Record the username and passoword for the SQL Server user you just created in your text file.
+
+1.  Close the remote desktop session to the SQL Server machine and the RDP connection to the Windows Admin machine.
 
 ## Task 3. Connect to the database from a client
 
