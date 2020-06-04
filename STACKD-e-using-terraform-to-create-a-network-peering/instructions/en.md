@@ -6,7 +6,7 @@ In this lab, you will peer two networks. This will allow communication between m
 
 ### Objectives
 
-In this lab, you will learn how to perform the following tasks:
+In this lab, you will learn how to perform the following tasks: 
 
 *   Peer two networks
 *   Deploy a VM with no external IP 
