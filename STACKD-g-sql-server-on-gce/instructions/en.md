@@ -235,7 +235,7 @@ Password:
 
 1.  Once, Management Studo starts, the local server name should already be filled in. Click the **Connect** button to log into it. 
 
-1.  In Object Explorer, right-click on the Server at the top and select **Properties**. <p>Click on the **Security** tab, and then select the **SQL Server and Windows authentication mode** radio button. </p><p>Click the **OK** buttonandread the message. 
+1.  In Object Explorer, right-click on the Server at the top and select **Properties**. <p>Click on the **Security** tab, and then select the **SQL Server and Windows authentication mode** radio button. </p><p>Click the **OK** button and read the message, then click OK to dismiss it. 
 
 1.  To restart the SQL Server, right-click on it again in Object Explorer and select **Restart**. Agree when prompted. Give the server a few seconds to restart, you might have to click the Refresh button to see that it is restarted. 
 
