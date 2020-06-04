@@ -167,9 +167,9 @@ go
 
 1.  That was stupid! Let's restore from that backup you created earlier.
 
-1. Go back to **Cloud SQL** in the console. Select your database to view its details and then click the **Backups** link.
+1. Go back to **Cloud SQL** in the console. Select your server to view its details and then click the **Backups** link.
 
-1.  Click on the button next to your backup and select **Restore**. Answer Yes when prompted.  *This will take a few minutes*.
+1.  Click on the button next to your backup and select **Restore**. Answer OK when prompted.  *This will take a few minutes*.
 
 1.  When the restore operaton completes, return to your client machine and run the SELECT query again to verify your backup was restored correctly. 
 
