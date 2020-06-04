@@ -45,12 +45,12 @@ git clone https://github.com/drehnstrom/db-migration-course
 1.  Change to the following folder.
 
 ```
-cd ~/db-migration-course/terraform-networks/
+cd ~/db-migration-course/terraform-create-peering/
 ```
 
 1.  Type `ls` and you will see this folder has the Terraform files to create two networks and a couple test servers. 
 
-1.  Click on the **Open Editor** button. Open the `terraform.tfvars` file in the `db-migration-course/terraform-networks/` folder.<p>Change the `project_id` variable to match your project's ID.</p>
+1.  Click on the **Open Editor** button. Open the `terraform.tfvars` file in the `db-migration-course/terraform-create-peering/` folder.<p>Change the `project_id` variable to match your project's ID.</p>
 
 1.  Enter the following commands to initialize Terraform and create the resources. 
 
