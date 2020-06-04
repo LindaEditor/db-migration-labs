@@ -275,7 +275,7 @@ sqlcmd -S 10.2.2.3,1433 -U username
 
 1.  If you don't get an error, your client login worked. At this point there's no database, so there's nothing else to do, but you have a complete solution in place. <p>Your database server is in a secure network with no public access. You have a Windows machine in the public network that can be used to administrate the database, and you have a client machine that can access the database via the SQL Server port.
 
-1.  Close your RDP and SSH sessions. Then, return to the Cloud Shell terminal. Enter the following command to delete everything you create earlier in the lab.
+1.  Type quit to exit the sqlcmd and then close your SSH session. Then, return to the Cloud Shell terminal. Enter the following command to delete everything you create earlier in the lab.
 
 ```
 terraform destroy -auto-approve
