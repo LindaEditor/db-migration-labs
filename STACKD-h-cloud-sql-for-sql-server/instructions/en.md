@@ -41,7 +41,7 @@ __OPEN__ to select your project.
 
 1.  Expand the **Machine type and storage** section. <p>Choose the **Standard** edition of SQL Server.<p>Change the machine type to **4vCPUs, 16GB**.<p>Leave storage capacity at 20GB and make sure the **Enable automatic storage increases** is checked.
 
-1. Expand the **Connectivity** section. Check the **Private IP** checkbox. Click the **Enable API** button when prompted. <p>**Note:** *There apprears an Associated networking dropdown. This is the network that will be peered to the network Google manages your Cloud SQL database in. This is just like what you did earlier in the course when you created public and private networks and setup a peering between them.* <p>Click on the **Allocate and connect** button (*this will take a minute*). Then, **uncheck** the Public IP checkbox.
+1. Expand the **Connectivity** section. Check the **Private IP** checkbox. Click the **Enable API** button when prompted. <p>**Note:** *An Associated networking dropdown will appear just below the Private IP checkbox. This is the network that will be peered to the network Google manages your Cloud SQL database in. This is just like what you did earlier in the course when you created public and private networks and setup a peering between them.* <p>Click on the **Allocate and connect** button (*this will take a minute*). Then, **uncheck** the Public IP checkbox.
 
 1.  Expand the **Backups, recovery and high availability** section. Check the box to enable automatic backups. <p>Also, select the **High availability** radio button. *This will create a failover replica in another zone in the same region.*
 
