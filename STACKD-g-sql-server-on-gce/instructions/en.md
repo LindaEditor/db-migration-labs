@@ -42,20 +42,20 @@ __OPEN__ to select your project.
 4.  Enter the following command to clone a GitHub repository which includes a completed version of the last lab. 
 
 ```
-git clone https://github.com/drehnstrom/db-migration-course
+git clone https://github.com/GoogleCloudPlatform/training-data-analyst
 ```
 
 5.  Change to the following folder.
 
 ```
-cd ~/db-migration-course/terraform-sql-server-on-gce/
+cd ~/training-data-analyst/courses/db-migration/terraform-sql-server-on-gce/
 ```
 
-6.  Type `ls` and you will see this folder has the Terraform files complete from the last lab. 
+6.  Type `ls` and you will see this folder has the Terraform files completed from the last lab. 
 
-7.  Click on the **Open Editor** button. Open the `terraform.tfvars` file in the `db-migration-course/terraform-networks-peered/` folder.<p>Change the `project_id` variable to match your project's ID.</p>
+7.  Click on the **Open Editor** button. Open the `terraform.tfvars` file in the `training-data-analyst/courses/db-migration/terraform-sql-server-on-gce/` folder.<p>Change the `project_id` variable to match your project's ID.</p>
 
-8. First, you will create a SQL Server machine n the private network. Add a file named `vm-sql-server-windows.tf` and paste the following Terraform code into it. 
+8. First, you will create a SQL Server machine in the private network. Add a file named `vm-sql-server-windows.tf` and paste the following Terraform code into it. 
 
 ```
 # Create Windows SQL Server in Private VPC

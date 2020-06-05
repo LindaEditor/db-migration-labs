@@ -324,9 +324,12 @@ output "test-server-linux-internal-ip" {
 
 3.  Create a test server in the private network using the public one as a guide.
 
+<aside><p><strong>Note: </strong>Try to complete this lab on your own. It you get stuck, there is a complete solution in GitHub at the following URL.</p></aside>
+
+https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/db-migration/terraform-networks-completed
+
+
 4.  Once you have everything created you should be able to SSH into the public test server. The server in the private network won't be accesible yet. You will fix that in the next lab.
-
-
 
 <aside><p><strong>Congratulations!</strong>You have created a secure network infrastructure for your database migration projects. You created both public and private VPCs with appropriate firewall rules in each. You added virtual machines to each network and tested the commnication between them. You did all of this using Terraform. </p></aside>
 

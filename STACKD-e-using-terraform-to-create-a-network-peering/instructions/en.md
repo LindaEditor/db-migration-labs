@@ -41,18 +41,18 @@ __OPEN__ to select your project.
 4.  Enter the following command to clone a GitHub repository which includes a completed version of the last lab. 
 
 ```
-git clone https://github.com/drehnstrom/db-migration-course
+git clone https://github.com/GoogleCloudPlatform/training-data-analyst
 ```
 
 5.  Change to the following folder.
 
 ```
-cd ~/db-migration-course/terraform-create-peering/
+cd ~/training-data-analyst/courses/db-migration/terraform-create-peering/
 ```
 
 6.  Type `ls` and you will see this folder has the Terraform files to create two networks and a couple test servers. 
 
-7.  Click on the **Open Editor** button. Open the `terraform.tfvars` file in the `db-migration-course/terraform-create-peering/` folder.<p>Change the `project_id` variable to match your project's ID.</p>
+7.  Click on the **Open Editor** button. Open the `terraform.tfvars` file in the `training-data-analyst/courses/db-migration/terraform-create-peering/` folder.<p>Change the `project_id` variable to match your project's ID.</p>
 
 8.  Enter the following commands to initialize Terraform and create the resources. 
 
@@ -78,10 +78,10 @@ ping 10.2.2.2
 
 13.  Notice there are no peered networks at this point. You could setup the peering here in the Console, but it would be more automated and reproducable to use Terraform. 
 
-Back in Cloud Shell, make sure you are in the `cd ~/db-migration-course/terraform-create-peering/` folder and create a file called `vpc-peering.tf`.
+Back in Cloud Shell, make sure you are in the `~/training-data-analyst/courses/db-migration/terraform-create-peering/` folder and create a file called `vpc-peering.tf`.
 
 ```
-cd ~/db-migration-course/terraform-create-peering/
+cd ~/training-data-analyst/courses/db-migration/terraform-create-peering/
 touch vpc-peering.tf
 ```
 

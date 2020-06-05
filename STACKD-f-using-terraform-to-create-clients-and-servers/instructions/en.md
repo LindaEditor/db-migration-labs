@@ -36,23 +36,25 @@ __OPEN__ to select your project.
 
 2.  In the **Project info** section, find your Project ID and copy and paste it into a text file. You will need it later.
 
+![Project ID](img/proj-id.png)
+
 3.  In the Console, click on the **Activate Cloud Shell** icon in the upper right of the console. ![Cloud Shell](img/CloudShell.png) <p>The Cloud Shell terminal will open in a pane at the bottom.</p>
 
 4.  Enter the following command to clone a GitHub repository which includes a completed version of the last lab. 
 
 ```
-git clone https://github.com/drehnstrom/db-migration-course
+git clone https://github.com/GoogleCloudPlatform/training-data-analyst
 ```
 
 5.  Change to the following folder.
 
 ```
-cd ~/db-migration-course/terraform-clients-servers/
+cd ~/training-data-analyst/courses/db-migration/terraform-clients-servers/
 ```
 
 6.  Type `ls` and you will see this folder has the Terraform files completed from the last lab. 
 
-7.  Click on the **Open Editor** button. Open the `terraform.tfvars` file in the `db-migration-course/terraform-clients-servers/` folder.<p>Change the `project_id` variable to match your project's ID.</p>
+7.  Click on the **Open Editor** button. Open the `terraform.tfvars` file in the `training-data-analyst/courses/db-migration/terraform-clients-servers/` folder.<p>Change the `project_id` variable to match your project's ID.</p>
 
 8. First, you will create a Debian Linux machine in the private network. Add a file named `vm-mysql-server.tf` and paste the following Terraform code into it. 
 
@@ -190,7 +192,7 @@ sudo apt install -y mysql-server
 
 8. Click on the **Get started** button. You could create the NAT right here by filling in the form. However, that would not be reproducable. Let's do this in Terraform instead. Click the **Cancel** button.
 
-9.  Go back to the Cloud Shell Code Editor. In the `db-migration-course/terraform-clients-servers` folder, add a file called `cloud-nat.tf`. Add the following Terraform code to that file.
+9.  Go back to the Cloud Shell Code Editor. In the `training-data-analyst/courses/db-migration/terraform-clients-servers` folder, add a file called `cloud-nat.tf`. Add the following Terraform code to that file.
 
 ```
 resource "google_compute_router" "nat-router" {
