@@ -61,53 +61,48 @@ __OPEN__ to select your project.
 
 1.  In the Console, click on the **Activate Cloud Shell** icon in the upper right of the console. ![Cloud Shell](img/CloudShell.png) <p>The Cloud Shell Terminal will open in a pane at the bottom.</p>
 
-2.  Enter the following command to clone a GitHub repository which includes a sample database. 
+2.  Enter the following command to download a sample database you will use in this exercise. 
 
 ```
-git clone https://github.com/drehnstrom/db-migration-course
+curl -O https://storage.googleapis.com/cloud-training/dbmigration/Adventure
+WorksLT2017.bak
 ```
 
-3.  Change to the following folder.
+3.  Type `ls`. Notice, there is a SQL backup file, `AdventureWorksLT2017.bak` which will allow you to restore the Microsoft Adventure Works sample database. 
 
-```
-cd ~/db-migration-course/cloud-sql
-```
-
-4.  Type `ls`. Notice, there is a SQL backup file which will allow you to restore the Microsoft Adventure Works sample database. 
-
-5.  In Cloud Shell, there is an environment variable that is set to your current project's ID. To see that variable, type the following command. 
+4.  In Cloud Shell, there is an environment variable that is set to your current project's ID. To see that variable, type the following command. 
 
 ```
 echo $DEVSHELL_PROJECT_ID
 ```
 
-6. Now you will create a Cloud Storage bucket who's name is the same as your project ID. (*This name should be unique*.)
+5. Now you will create a Cloud Storage bucket who's name is the same as your project ID. (*This name should be unique*.)
 
 ```
 gsutil mb gs://$DEVSHELL_PROJECT_ID
 ```
 
-7.  Now, copy the Adventure Works backup file into that bucket.
+6.  Now, copy the Adventure Works backup file into that bucket.
 
 ```
 gsutil cp ./AdventureWorksLT2017.bak gs://$DEVSHELL_PROJECT_ID
 ```
 
-8.  Take a look at your Cloud SQL server in the console. If it is ready, you can move on, otherwise take a short break. 
+7.  Take a look at your Cloud SQL server in the console. If it is ready, you can move on, otherwise take a short break. 
 
-9.  When the server is ready, click on its name to see its details. 
+8.  When the server is ready, click on its name to see its details. 
 
-10.  On the **Overview** page, click the **Import** button at the top. 
+9.  On the **Overview** page, click the **Import** button at the top. 
 
 ![Import](img/sql-import.png)
 
-11.  Browse to your bucket and select the `AdventureWorksLT2017.bak` file. <p>In the Destination section, name the database `AdventureWorks` and lastly click **Import**. <p>*It will take a short time for the import to complete*. 
+10.  Browse to your bucket and select the `AdventureWorksLT2017.bak` file. <p>In the Destination section, name the database `AdventureWorks` and lastly click **Import**. <p>*It will take a short time for the import to complete*. 
 
-12.  When the import job completes, click on the **Backups** link on the left. Notice, backups are set to run automatically, but click the button to create a backup now. Set to description to `Initial AdventureWorks backup`. <p>*It will take a short time for the backup to complete*. 
+11.  When the import job completes, click on the **Backups** link on the left. Notice, backups are set to run automatically, but click the button to create a backup now. Set to description to `Initial AdventureWorks backup`. <p>*It will take a short time for the backup to complete*. 
 
 ![Backup](img/sql-backup.png)
 
-13.  Click on the **Operations** link on the left. Notice, it tracks what has happened on the database so far. 
+12.  Click on the **Operations** link on the left. Notice, it tracks what has happened on the database so far. 
 
 ## Task 3. Connect to the database using its private IP address
 
@@ -189,7 +184,6 @@ go
 15.  Click on the button next to your backup and select **Restore**. Answer OK when prompted.  *This will take a few minutes*.
 
 ![Restore](img/restore.png)
-
 
 16.  When the restore operaton completes, return to your client machine and run the SELECT query again to verify your backup was restored correctly. 
 
