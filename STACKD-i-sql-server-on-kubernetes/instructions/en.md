@@ -58,16 +58,16 @@ kubectl get nodes
 1.  Clone the following GitHub repository which has the SQL Server configuration files already created for you. 
 
 ```
-git clone https://github.com/drehnstrom/db-migration-course
+git clone https://github.com/GoogleCloudPlatform/training-data-analyst
 ```
 
 2.  Change to the following folder.
 
 ```
-cd ~/db-migration-course/sql-server-on-gke
+cd ~/training-data-analyst/courses/db-migration/sql-server-on-gke
 ```
 
-3.  Click the **Open Editor** button, and then select the `db-migration-course/sql-server-on-gke` folder. 
+3.  Click the **Open Editor** button, and then select the `training-data-analyst/courses/db-migration/sql-server-on-gke` folder. 
 
 4. Select the `volume-claims.yaml` file. This file configures three volumes: one for the SQL Server software, one for the data and one for the transaction logs.
 
