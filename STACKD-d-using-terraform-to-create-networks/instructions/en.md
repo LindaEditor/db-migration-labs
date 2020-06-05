@@ -37,6 +37,8 @@ __OPEN__ to select your project.
 
 1.  In the **Project info** section, find your Project ID and copy and paste it into a text file. You will need it later.
 
+![Project ID](img/proj-id.png)
+
 1.  Click on the **Activate Cloud Shell** icon in the upper right of the console. ![Cloud Shell](img/CloudShell.png) <p>The Cloud Shell terminal will open in a pane at the bottom.</p>
 
 1.  Make a directory called `terraform-networks` and change to it. 

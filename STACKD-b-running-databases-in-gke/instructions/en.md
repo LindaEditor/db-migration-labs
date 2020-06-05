@@ -35,7 +35,13 @@ __OPEN__ to select your project.
 
 1.  Click on the **Create Cluster** button. Accept all the defaults and click the **Create** button at the bottom. It will take a couple minutes for the cluster to be ready. 
 
-1.  When the cluster is ready, click on the **Connect** button. Notice the command for connecting to the cluster is specified. Click the **Run in Cloud Shell** button to open Cloud Shell with the command entered. Hit Enter to run the command.
+1.  When the cluster is ready, click on the **Connect** button. 
+
+![Connect](img/connect-button.png)
+
+1.  Notice the command for connecting to the cluster is specified. Click the **Run in Cloud Shell** button to open Cloud Shell with the command entered. Hit Enter to run the command.
+
+![Run](img/run-in-cloud-shell.png)
 
 1.  Now you are connected to the cluster and ready to deploy a program. Test the connection with the following kubectl command. This command should return a list of the three virtual machines that make up this cluster. 
 
@@ -62,7 +68,15 @@ mkdir mysql-gke
 cd mysql-gke
 ```
 
-1.  Now you will create the Kubernetes configuration files. In Cloud Shell, click on the **Open Editor** button. Make sure you click on the `mysql-gke` folder on the left. <p>Select **File > New File** and name the file `volume.yaml`.</P>
+1.  Now you will create the Kubernetes configuration files. In Cloud Shell, click on the **Open Editor** button. 
+
+![Open Editor](img/open-editor.png)
+
+1. Make sure you click on the `mysql-gke` folder on the left. 
+
+![Editor](img/editor.png)
+
+<p>Select **File > New File** and name the file `volume.yaml`.</P>
 
 1.  Enter the following YAML code and save the file. This reserves 1 gigabyte of disk space for the MySQL database.
 

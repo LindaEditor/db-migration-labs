@@ -33,11 +33,18 @@ __OPEN__ to select your project.
 
 1.  In the Navigation menu ( ![Menu](img/menu.png) ), click on **Compute Engine > VM Instances**.
 
-1.  Click on the **Create Instance** button. 
+1.  Click on the **Create** button. 
 
-1.  Name the instance `mysql-db`. <p>In the **Boot disk** section, click the **Change** button. Select **Ubuntu** from the Operating system dropdown, and from the Version dropdown, select **Ubuntu 16.04 LTS**. Click the **Select** button. <p>Accept all the remaining defaults and click the **Create** button at the bottom of the form.</p>
+1.  Name the instance `mysql-db`. <p>In the **Boot disk** section, click the **Change** button. 
+
+![Change](img/boot-disk-change.png)
+
+
+1.  Select **Ubuntu** from the Operating system dropdown, and from the Version dropdown, select **Ubuntu 16.04 LTS**. Click the **Select** button. <p>Accept all the remaining defaults and click the **Create** button at the bottom of the form.</p>
 
 1.  It will take a few seconds for the VM to be ready. When it is, click on the **SSH** button. This will log you into the server in a new tab.
+
+![Change](img/ssh-button.png)
 
 1.  In the terminal window, enter the following to update the packages and install MySQL using the Apt package manager. During the installation, you will be prompted to enter a password for the root database user. Enter something you will remember as you will need it later.
 
@@ -111,11 +118,20 @@ You just create a MySQL database server using Ubuntu Linux.
 
 1.  Return the Google Cloud console and the Compute Engine service.
 
-1.  Click on the Create Instance button at the top.
+1.  Click on the **Create Instance** button at the top.
 
-1.  Name this instance `sql-server-db`. In the **Machine type** dropdown, select `n1-standard-4`. <p>In the Boot disk section, click the **Change** button. Select `SQL Server on Windows` from the **Operating system** dropdown and from the **Version** dropdown, select `SQL Server 2019 Web` edition. Click the **Select** button</p><p>Accept the remaining defaults and then click the **Create** button at the bottom.
+![Create Instance](img/create-instance-button.png)
 
-1.  It will take a couple minutes for the Windows server to be ready. When it is click the dropdown arrow next to the RDP button and select **Set Windows password**.<p>Change the Username to your first name and click the **Set** button. Copy and paste the generated password into a text file so you don't lose it. 
+
+1.  Name this instance `sql-server-db`. In the **Machine type** dropdown, select `n1-standard-4`. <p>In the Boot disk section, click the **Change** button. Select `SQL Server on Windows` from the **Operating system** dropdown and from the **Version** dropdown, select `SQL Server 2019 Web...` edition. Click the **Select** button</p><p>Accept the remaining defaults and then click the **Create** button at the bottom.
+
+1.  It will take a couple minutes for the Windows server to be ready. When it is click the dropdown arrow next to the RDP button and select **Set Windows password**.
+
+![Set Windows PW](img/set-win-pw.png)
+
+<aside><p><strong>Note:</strong>If you get to this point too fast, the Windows server may not be ready even though there is a green check in the console indcating it is. Wait a couple minutes and try again.</p></aside>
+
+1.  Change the Username to your first name and click the **Set** button. Copy and paste the generated password into a text file so you don't lose it. 
 
 1.  You need to have an RDP client to log onto the Windows machine. <p>If you are using Windows, you already have RDP. Just click the down arrow next to the **RDP** button and select **Download the RDP file**. Once it's downloaded, double-click on it and try logging on with the your username and the password you copied. </p><p>If you are using a Mac you can install the **Microsoft Remote Desktop** client from the Apple App Store (*you may already have it installed*). Once you install the client, download the RDP file and try logging in with your username and the generated password.</p><p>Lastly, you can install the Chrome RDP extension. Click the RDP button and follow the instructions. Once you have an RDP client setup try logging in with your username and password.
 
@@ -194,7 +210,11 @@ apt-get update
 apt-get install -y mysql-server
 ```
 
-1.  Scroll to the bottom, but ***do not*** click on the Create button, instead click on the **command line** link at the bottom.<p>The resulting screen shows you the gcloud CLI command you can use to automate this server's creation as you configured it.</p><p>Copy the command to the clipboard and close the popup.</p> 
+1.  Scroll to the bottom, but ***do not*** click on the Create button, instead click on the **command line** link at the bottom.
+
+![Command Line](img/cmd-line.png)
+
+1.  The resulting screen shows you the gcloud CLI command you can use to automate this server's creation as you configured it.</p><p>Copy the command to the clipboard and close the popup.</p> 
 
 1.  Click on the **Activate Cloud Shell** icon in the upper right of the console. ![Cloud Shell](img/CloudShell.png) <p>The Cloud Shell terminal will open in a pane at the bottom.</p>
 

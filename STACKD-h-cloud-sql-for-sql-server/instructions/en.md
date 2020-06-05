@@ -37,13 +37,22 @@ __OPEN__ to select your project.
 
 1.  Click the **Create Instance** button, and then choose **SQL Server**.
 
+![Choose SQL Server](img/choose-sql-server.png)
+
 1.  Name your database `sql-server-db` and then click the **Generate** button next to the password text box. Copy and paste your generated password into a text file so you don't lose it. ***If you prefer you can just enter a password that you can remember***. <p>Choose the zone `us-central1-a`</p>
 
 1.  Expand the **Machine type and storage** section. <p>Choose the **Standard** edition of SQL Server.<p>Change the machine type to **4vCPUs, 16GB**.<p>Leave storage capacity at 20GB and make sure the **Enable automatic storage increases** is checked.
 
+![Machine Type](img/machine-type.png)
+
 1. Expand the **Connectivity** section. Check the **Private IP** checkbox. Click the **Enable API** button when prompted. <p>**Note:** *An Associated networking dropdown will appear just below the Private IP checkbox. This is the network that will be peered to the network Google manages your Cloud SQL database in. This is just like what you did earlier in the course when you created public and private networks and setup a peering between them.* <p>Click on the **Allocate and connect** button (*this will take a minute*). Then, **uncheck** the Public IP checkbox.
 
+![Connectivity](img/connectivity.png)
+
 1.  Expand the **Backups, recovery and high availability** section. Check the box to enable automatic backups. <p>Also, select the **High availability** radio button. *This will create a failover replica in another zone in the same region.*
+
+![Backups and Recovery](img/backup-recovery.png)
+
 
 1. Finally, click the **Create** button to create your database server. <p>*This will take a few minutes, but you can continue with the next few steps while you are waiting*. 
 
@@ -88,9 +97,15 @@ gsutil cp ./AdventureWorksLT2017.bak gs://$DEVSHELL_PROJECT_ID
 
 1.  When the server is ready, click on its name to see its details. 
 
-1.  On the **Overview** page, click the **Import** button at the top. <p>Browse to your bucket and select the `AdventureWorksLT2017.bak` file. <p>In the Destination section, name the database `AdventureWorks` and lastly click **Import**. <p>*It will take a short time for the import to complete*. 
+1.  On the **Overview** page, click the **Import** button at the top. 
+
+![Import](img/sql-import.png)
+
+1.  Browse to your bucket and select the `AdventureWorksLT2017.bak` file. <p>In the Destination section, name the database `AdventureWorks` and lastly click **Import**. <p>*It will take a short time for the import to complete*. 
 
 1.  When the import job completes, click on the **Backups** link on the left. Notice, backups are set to run automatically, but click the button to create a backup now. Set to description to `Initial AdventureWorks backup`. <p>*It will take a short time for the backup to complete*. 
+
+![Backup](img/sql-backup.png)
 
 1.  Click on the **Operations** link on the left. Notice, it tracks what has happened on the database so far. 
 
@@ -99,6 +114,8 @@ gsutil cp ./AdventureWorksLT2017.bak gs://$DEVSHELL_PROJECT_ID
 1.  Click on the **Users** link on the left. Notice a user named `sqlserver` is automatically created for you. The password for this user is the one you generated when you created the database. *You should have pasted the password in a text file*. <p>You could create additional users at here if you wanted to. 
 
 1.  Click on the **Overview** link on the left. Copy the **Private IP address** to the clipboard and paste it in your text file as well. *You will need this later to connect to the database*. 
+
+![Private IP](img/private-ip.png)
 
 1. In Cloud Shell, enter the following gcloud command to create an Ubuntu linux virtual machine. 
 
@@ -171,6 +188,9 @@ go
 
 1.  Click on the button next to your backup and select **Restore**. Answer OK when prompted.  *This will take a few minutes*.
 
+![Restore](img/restore.png)
+
+
 1.  When the restore operaton completes, return to your client machine and run the SELECT query again to verify your backup was restored correctly. 
 
 ```
@@ -182,6 +202,8 @@ go
 
 1. Go back to your Cloud SQL database **Overview** page and click the **Failover** button at the top. 
 
+![Failover](img/sql-failover.png)
+
 1.  Enter the database name as instructed and click the **Trigger Failover** button.  *It will take about a minute for the failover operation to finish*.
 
 1.  When the operation completes, go back to your client and try to run your query again. 
@@ -192,7 +214,7 @@ UPDATE [AdventureWorks].[SalesLT].[Customer] SET CompanyName = 'Google' WHERE Cu
 go
 ```
 
-1. Go back to the **Overview** page and this time click the Fallback button to return to the main database and confirm that the change made on the FailOver is reflected on the main server.
+1. Go back to the **Overview** page and this time click the **Fallback** button to return to the main database and confirm that the change made on the FailOver is reflected on the main server.
 
 1. Lastly, you can delete the database. From the **Overview** page click the **Delete** button and follow the instructions. <p>You can also go to the **Compute Engine** service and delete the client machine.
 

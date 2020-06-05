@@ -37,6 +37,8 @@ __OPEN__ to select your project.
 
 1.  Click on the **Create Instance** button, and choose the `PostgreSQL` option.
 
+![PostgreSQL](img/postgresql.png)
+
 1.  Name the instance `postgresql-db` and enter a password you can remember (*or click the Generate button and copy the generated password to a text file if you prefer*).
 
 1.  Accept all the rest of the defaults and click the **Create** button.
@@ -45,9 +47,14 @@ __OPEN__ to select your project.
 
 1.  When the database is ready, click on its name in the console to see its details.
 
+![Details](img/instance-name.png)
+
 ## Task 2. Connect to the database using the Google Cloud SDK
 
 1.  In the **Connect to this instance** section, click the **Connect using Cloud Shell** link. This opens Cloud Shell at the bottom of the screen.
+
+![Connect](img/connect-to-inst.png)
+
 
 1.  Note the connection command is already entered at the prompt. Hit Enter to run the command. <p>It will take a little while for Cloud Shell's IP address to be whitelisted by the Cloud SQL network. Enter your password when prompted.
 

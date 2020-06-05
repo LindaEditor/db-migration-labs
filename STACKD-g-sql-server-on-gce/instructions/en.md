@@ -35,6 +35,8 @@ __OPEN__ to select your project.
 
 1.  In the **Project info** section, find your Project ID and copy and paste it into a text file. You will need it later.
 
+![Project ID](img/proj-id.png)
+
 1.  In the Console, click on the **Activate Cloud Shell** icon in the upper right of the console. ![Cloud Shell](img/CloudShell.png) <p>The Cloud Shell terminal will open in a pane at the bottom.</p>
 
 1.  Enter the following command to clone a GitHub repository which includes a completed version of the last lab. 
