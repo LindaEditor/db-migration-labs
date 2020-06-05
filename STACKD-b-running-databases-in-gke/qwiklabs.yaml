@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 title: 'Running Databases in GKE'
-description: Impressive description 
+description: In this lab, you will create a Kubernetes cluster and then deploy databases into it. You will see two ways to deploy the databases. First using your own configuration code and then using a Kubernetes package manager called Helm.
 default_locale: en
 duration: 60
 max_duration: 120

@@ -1,9 +1,9 @@
 ---
 schema_version: 1
-title: 'Cool title'
-description: Impressive description 
+title: 'Using Terraform to Create Clients and Servers'
+description: In this lab, you will provision a Linux virtual machine in a private network to act as a database server. You will also create a virtual machine that you can use as a bastion host to connect to the database server as an administrator. You will configure the database server for remote connections and add a user account. You will then install the MySQL client software to connect to the database server from a client machine. 
 default_locale: en
-duration: 45
+duration: 60
 max_duration: 120
 level: intermediate
 tags:

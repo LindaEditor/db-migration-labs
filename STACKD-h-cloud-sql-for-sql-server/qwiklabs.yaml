@@ -1,7 +1,7 @@
 ---
 schema_version: 1
-title: 'Cool title'
-description: Impressive description 
+title: 'Administering a Highly Available Cloud SQL for SQL Server Database'
+description: In this lab, you will create a SQL Server database using Google Cloud SQL. You will enable high availability and deploy it securely with only a private IP address. You will then load a sample database into it and connect to the database using a client machine. You will also perform backup and restore operations and test high availability by triggering a failover. 
 default_locale: en
 duration: 45
 max_duration: 120

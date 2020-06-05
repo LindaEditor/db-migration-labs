@@ -1,9 +1,9 @@
 ---
 schema_version: 1
-title: 'Cool title'
-description: Impressive description 
+title: 'Use Terraform to Create a Network Peering'
+description: In this lab, you will peer two networks. This will allow communication between machines in those networks using internal IP addresses. This means databases can be deployed on a private network without external IP addresses, and those database will only be reachable from from the peered network.
 default_locale: en
-duration: 45
+duration: 60
 max_duration: 120
 level: intermediate
 tags:

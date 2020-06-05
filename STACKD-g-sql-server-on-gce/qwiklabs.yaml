@@ -1,9 +1,9 @@
 ---
 schema_version: 1
-title: 'Cool title'
-description: Impressive description 
+title: 'Creating SQL Server Databases on Compute Engine'
+description: In this lab, you will provision a SQL Server machine in a private network. Then, you will create a Windows machine in a public network that you can use to adminstrate the database server. You will also create a Linux client in the public network that can be used to connect to the database. Lastly, you will setup a firewall rule that allows access to the SQL Server database only from the private network.
 default_locale: en
-duration: 45
+duration: 60
 max_duration: 120
 level: intermediate
 tags:

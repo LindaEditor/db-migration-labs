@@ -1,9 +1,9 @@
 ---
 schema_version: 1
 title: 'Creating Cloud SQL Databases'
-description: Impressive description 
+description: In this lab, you will use Google Cloud SQL to create databases that are managed by Google. You will create both PostgreSQL and MySQL databases and you will connect to those databases using the Google Cloud CLI and from a virtual machine.
 default_locale: en
-duration: 45
+duration: 60
 max_duration: 120
 level: intermediate
 tags:

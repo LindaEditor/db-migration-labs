@@ -1,9 +1,9 @@
 ---
 schema_version: 1
-title: 'Cool title'
-description: Impressive description 
+title: 'Using Terraform to Create Networks and Firewalls'
+description: In this lab, you will create a secure network infrastructure for you database migration projects. You will create both public and private VPCs with appropriate firewall rules in each. You will add virtual machines to each network and test the commnication between them. You will do all of this using Terraform to demonstrate a more real-world workflow that you can use in your migration projects.  
 default_locale: en
-duration: 45
+duration: 60
 max_duration: 120
 level: intermediate
 tags:

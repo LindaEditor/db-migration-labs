@@ -1,7 +1,7 @@
 ---
 schema_version: 1
-title: 'Cool title'
-description: Impressive description 
+title: 'Running SQL Server on Google Kubernetes Engine'
+description: In this lab, you will create a Kubernetes cluster in Google Kubernetes Engine (GKE). You will configure and deploy a Microsoft SQL Server database into the cluster and connect to it from a client machine. Then, you will simplify the deployment using Helm. 
 default_locale: en
 duration: 45
 max_duration: 120

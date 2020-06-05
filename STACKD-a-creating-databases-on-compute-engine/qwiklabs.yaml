@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 title: 'Creating Databases in Compute Engine'
-description: Impressive description 
+description: In this lab, you will create database servers running on Google Cloud Compute Engine. You will create both Linux and Windows servers and will use the CLI to automate the creation of a server.  
 default_locale: en
 duration: 60
 max_duration: 120
