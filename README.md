@@ -1,3 +1,1 @@
 # db-migration-labs
-# joey
-
