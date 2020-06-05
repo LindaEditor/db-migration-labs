@@ -35,17 +35,17 @@ __OPEN__ to select your project.
 
 1.  In the Navigation menu ( ![Menu](img/menu.png) ), scroll down to the Storage section and click on **SQL**.
 
-1.  Click on the **Create Instance** button, and choose the `PostgreSQL` option.
+2.  Click on the **Create Instance** button, and choose the `PostgreSQL` option.
 
 ![PostgreSQL](img/postgresql.png)
 
-1.  Name the instance `postgresql-db` and enter a password you can remember (*or click the Generate button and copy the generated password to a text file if you prefer*).
+3.  Name the instance `postgresql-db` and enter a password you can remember (*or click the Generate button and copy the generated password to a text file if you prefer*).
 
-1.  Accept all the rest of the defaults and click the **Create** button.
+4.  Accept all the rest of the defaults and click the **Create** button.
 
 <aside><p><strong>Note:</strong> It will take a few minutes for your database to be ready. </p></aside>
 
-1.  When the database is ready, click on its name in the console to see its details.
+5.  When the database is ready, click on its name in the console to see its details.
 
 ![Details](img/instance-name.png)
 
@@ -56,49 +56,49 @@ __OPEN__ to select your project.
 ![Connect](img/connect-to-inst.png)
 
 
-1.  Note the connection command is already entered at the prompt. Hit Enter to run the command. <p>It will take a little while for Cloud Shell's IP address to be whitelisted by the Cloud SQL network. Enter your password when prompted.
+2.  Note the connection command is already entered at the prompt. Hit Enter to run the command. <p>It will take a little while for Cloud Shell's IP address to be whitelisted by the Cloud SQL network. Enter your password when prompted.
 
-1.  To see the databases type the following (*that's a backslash and the lower case letter L*). 
+3.  To see the databases type the following (*that's a backslash and the lower case letter L*). 
 
 ```
 \l
 ```
 
-1.  Enter the following command to create a database.
+4.  Enter the following command to create a database.
 
 ```
 CREATE DATABASE petsdb;
 ```
-1.  See if it worked.
+5.  See if it worked.
 
 ```
 \l
 ```
 
-1.  To connect to the database, enter the following command an your password when prompted.
+6.  To connect to the database, enter the following command an your password when prompted.
 
 ```
 \c petsdb;
 ```
 
-1.  Create a table.
+7.  Create a table.
 
 ```
 CREATE TABLE Pets(ID INT PRIMARY KEY NOT NULL, Name TEXT, Breed TEXT);
 ```
 
-1.  Add a record.
+8.  Add a record.
 
 ```
 INSERT INTO Pets (ID, Name, Breed) Values (1, 'Noir', 'Schnoodle');
 ```
 
-1.  Run a query.
+9.  Run a query.
 ```
 SELECT * FROM Pets;
 ```
 
-1.  Type Ctrl+c to disconnect from the database and return to Cloud Shell. 
+10.  Type Ctrl+c to disconnect from the database and return to Cloud Shell. 
 
 ## Task 3. Create to a Cloud SQL MySQL database using the CLI
 
@@ -108,27 +108,27 @@ SELECT * FROM Pets;
 gcloud sql instances create mysql-db --tier=db-n1-standard-1 --zone=us-central1-a
 ```
 
-1.  When the command completes, make note of the database server's primary IP address. Copy and paste this address in a text file as you will need it later.
+2.  When the command completes, make note of the database server's primary IP address. Copy and paste this address in a text file as you will need it later.
 
-1.  Enter the following command to set the password for the root account. ***Make the password something you can remember.***
+3.  Enter the following command to set the password for the root account. ***Make the password something you can remember.***
 
 ```
 gcloud sql users set-password root --host=% --instance=mysql-db --password=your-password-here
 ```
 
-1.  Enter the following command to connect to your Cloud SQL database using the CLI. *It will take a little while for Cloud Shell's IP address to be whitelisted by the Cloud SQL network.* <p>Enter your password when prompted.</p>
+4.  Enter the following command to connect to your Cloud SQL database using the CLI. *It will take a little while for Cloud Shell's IP address to be whitelisted by the Cloud SQL network.* <p>Enter your password when prompted.</p>
 
 ```
 gcloud sql connect mysql-db --user=root --quiet
 ```
 
-1.  At the mysql prompt just type the following to ensure it works. 
+5.  At the mysql prompt just type the following to ensure it works. 
 
 ```
 SHOW DATABASES;
 ```
 
-1.  Type `exit` to return the the Cloud Shell command prompt.
+6.  Type `exit` to return the the Cloud Shell command prompt.
 
 ## Task 4. Connect to the MySQL database from a Virtual Machine
 
@@ -138,36 +138,36 @@ SHOW DATABASES;
 gcloud compute instances create test-client --zone=us-central1-a --image=debian-9-stretch-v20200521 --image-project=debian-cloud
 ```
 
-1.  When the command completes, copy the external IP address to the clipboard. You have to allow this machine access to the database. 
+2.  When the command completes, copy the external IP address to the clipboard. You have to allow this machine access to the database. 
 
-1.  Return to the Console and the Cloud SQL service. Click on the `mysql-db` database to see its details. <p>On the left, click on the **Connections** section. Then, click on the **Add Network** button. Paste the virtual machines external IP address in the Network text box. </p><p>Click the **Done** and the **Save** buttons.
+3.  Return to the Console and the Cloud SQL service. Click on the `mysql-db` database to see its details. <p>On the left, click on the **Connections** section. Then, click on the **Add Network** button. Paste the virtual machines external IP address in the Network text box. </p><p>Click the **Done** and the **Save** buttons.
 
-1.  Back in Cloud Shell, enter the following command to SSH into the test client.
+4.  Back in Cloud Shell, enter the following command to SSH into the test client.
 
 ```
 gcloud compute ssh test-client --zone=us-central1-a
 ```
 
-1.  Use the following commands to install the MySQL client software on this machine.
+5.  Use the following commands to install the MySQL client software on this machine.
 
 ```
 sudo apt-get update
 sudo apt-get install -y mysql-client
 ```
 
-1.  Now, try logging onto the database server. Use the command below, but change the IP address to your Cloud SQL database's IP address. (***You should have pasted this address in a text file earlier in the lab. If not, you can find it in the Cloud SQL console.***)
+6.  Now, try logging onto the database server. Use the command below, but change the IP address to your Cloud SQL database's IP address. (***You should have pasted this address in a text file earlier in the lab. If not, you can find it in the Cloud SQL console.***)
 
 ```
 mysql --host=[Database Public IP Address] --user=root --password
 ```
 
-1.  At the mysql prompt just type the following to ensure it works. 
+7.  At the mysql prompt just type the following to ensure it works. 
 
 ```
 SHOW DATABASES;
 ```
 
-1.  Type `exit` to return the the Cloud Shell command prompt.  
+8.  Type `exit` to return the the Cloud Shell command prompt.  
 
 
 <aside><p><strong>Congratulations! </strong>You have used Google Cloud SQL to create databases that are managed by Google. You created both PostgreSQL and MySQL databases and you connected to those databases using the Google Cloud CLI and from a virtual machine.</p></aside>

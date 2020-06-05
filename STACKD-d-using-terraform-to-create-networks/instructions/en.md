@@ -35,20 +35,20 @@ __OPEN__ to select your project.
 
 1.  In the Navigation menu ( ![Menu](img/menu.png) ), click on **Home**.
 
-1.  In the **Project info** section, find your Project ID and copy and paste it into a text file. You will need it later.
+2.  In the **Project info** section, find your Project ID and copy and paste it into a text file. You will need it later.
 
 ![Project ID](img/proj-id.png)
 
-1.  Click on the **Activate Cloud Shell** icon in the upper right of the console. ![Cloud Shell](img/CloudShell.png) <p>The Cloud Shell terminal will open in a pane at the bottom.</p>
+3.  Click on the **Activate Cloud Shell** icon in the upper right of the console. ![Cloud Shell](img/CloudShell.png) <p>The Cloud Shell terminal will open in a pane at the bottom.</p>
 
-1.  Make a directory called `terraform-networks` and change to it. 
+4.  Make a directory called `terraform-networks` and change to it. 
 
 ```
 mkdir terraform-networks
 cd terraform-networks
 ```
 
-1.  Use the following commands to create the required Terraform files for this lab. 
+5.  Use the following commands to create the required Terraform files for this lab. 
 
 ```
 touch provider.tf
@@ -61,9 +61,9 @@ touch public-test-server-linux.tf
 touch random-id-generator.tf
 ```
 
-1.  Type `ls` to verify your files were created in the **terraform-networks** folder.
+6.  Type `ls` to verify your files were created in the **terraform-networks** folder.
 
-1.  Click on the **Open Editor** button in Cloud Shell. <p>Select the **terraform-networks** folder and open the `provider.tf` file. Enter the following code to configure the Google Cloud Terraform provider.</p>
+7.  Click on the **Open Editor** button in Cloud Shell. <p>Select the **terraform-networks** folder and open the `provider.tf` file. Enter the following code to configure the Google Cloud Terraform provider.</p>
 
 ```
 terraform {
@@ -77,7 +77,7 @@ provider "google" {
 }
 ```
 
-1.  Notice the variables in the above code. You will create those and some other variables now. Open the `variables.tf` file and enter the following code.
+8.  Notice the variables in the above code. You will create those and some other variables now. Open the `variables.tf` file and enter the following code.
 
 ```
 # GCP Project ID 
@@ -105,7 +105,7 @@ variable "subnet_cidr_public" {
 }
 ```
 
-1.  In the previous file you defined the variables, you set the variables in another file. Open the `terraform.tfvars` file and add the following code.<p>***Enter your project ID where indicated.***
+9.  In the previous file you defined the variables, you set the variables in another file. Open the `terraform.tfvars` file and add the following code.<p>***Enter your project ID where indicated.***
 
 ```
 # GCP Settings
@@ -117,7 +117,7 @@ gcp_zone_1    = "us-central1-a"
 subnet_cidr_public  = "10.1.1.0/24"
 ```
 
-1.  Now open the `vpc-network-public.tf` file and add the following to it. 
+10.  Now open the `vpc-network-public.tf` file and add the following to it. 
 
 ```
 resource "google_compute_network" "public-vpc" {
@@ -137,22 +137,22 @@ resource "google_compute_subnetwork" "public-subnet_1" {
 <aside><p><strong>Note: </strong>The above Terraform code creates a VPC with one subnet. In the subnet, notice the two variables for `ip_cidr_range` and `region`. Also notice how the  `network` property refers back the the VPC created before the subnet.</p></aside>
 
 
-1.  Let's see if this works up to this point. In the Navigation menu of the Console ( ![Menu](img/menu.png) ), click on **VPC network**. At this point you should have one network named `default`
+11.  Let's see if this works up to this point. In the Navigation menu of the Console ( ![Menu](img/menu.png) ), click on **VPC network**. At this point you should have one network named `default`
 
-1.  In Cloud Shell, click on the ***Open Terminal*** button. Make sure you are in the right folder.
+12.  In Cloud Shell, click on the ***Open Terminal*** button. Make sure you are in the right folder.
 
 ```
 cd ~/terraform-networks
 ```
 
-1.  Enter the following code to initialize Terraform.
+13.  Enter the following code to initialize Terraform.
 
 ```
 terraform init
 ```
 <aside><p><strong>Note: </strong>It should indicate that "Terraform has been successfully initialized!".</p></aside>
 
-1.  Enter the following code to build the Terraform plan. Make sure there are no errors and take a look at what resources will be created. 
+14.  Enter the following code to build the Terraform plan. Make sure there are no errors and take a look at what resources will be created. 
 
 ```
 terraform plan
@@ -160,14 +160,14 @@ terraform plan
 
 <aside><p><strong>Note: </strong>The plan should tell you that 2 resources will be created, a network and a subnetwork.</p></aside>
 
-1.  If all looks good, run the follow command (*the -auto-approve parameter simply runs the script with prompting you*).
+15.  If all looks good, run the follow command (*the -auto-approve parameter simply runs the script with prompting you*).
 ```
 terraform apply -auto-approve
 ```
 
-1.  Wait for the script to complete. Then in the console, click the **Refresh** button in the VPC networks toolbar. You should see your new network and subnet.
+16.  Wait for the script to complete. Then in the console, click the **Refresh** button in the VPC networks toolbar. You should see your new network and subnet.
 
-1.  You're not done configuring the network. Delete what you just created with the following command. 
+17.  You're not done configuring the network. Delete what you just created with the following command. 
 
 ```
 terraform destroy -auto-approve
@@ -182,7 +182,7 @@ At this point you have used Terraform to create a network and subnet, next you w
 
 1.  In Cloud Shell, click on the **Open Editor** button. Open the `vpc-firewall-rules-public.tf` file in the `terraform-networks` folder. 
 
-1. First, add a firewall rule that will allow SSH into machines in this network. Paste the code below.
+2. First, add a firewall rule that will allow SSH into machines in this network. Paste the code below.
 
 ```
 # allow ssh
@@ -202,7 +202,7 @@ resource "google_compute_firewall" "public-allow-ssh" {
 
 <aside><p><strong>Note: </strong>This rule allows SSH from everywhere, but only to machines that have the "allow-ssh" tag.</p></aside>
 
-1.  Windows machines require RDP, not SSH. Add the following RDP rule below the SSH rule. 
+3.  Windows machines require RDP, not SSH. Add the following RDP rule below the SSH rule. 
 
 ```
 # allow rdp
@@ -221,7 +221,7 @@ resource "google_compute_firewall" "public-allow-rdp" {
 
 ```
 
-1.  Ping is useful for testing. Add the following rule to enable it below the previous rules. 
+4.  Ping is useful for testing. Add the following rule to enable it below the previous rules. 
 
 ```
 # allow ping only from everywhere
@@ -237,14 +237,14 @@ resource "google_compute_firewall" "public-allow-ping" {
 }
 ```
 
-1.  As you did before, switch the the Terminal and run the following command to check for errors and see what will be created. 
+5.  As you did before, switch the the Terminal and run the following command to check for errors and see what will be created. 
 
 ```
 terraform plan
 ```
 
 
-1.  Run the following Terraform command and verify that the network, subnet and firewall rules are all being created using the Console.
+6.  Run the following Terraform command and verify that the network, subnet and firewall rules are all being created using the Console.
 
 ```
 terraform apply -auto-approve
@@ -266,7 +266,7 @@ resource "random_id" "instance_id" {
 }
 ```
 
-1.  Open the `test-server-linux.tf` file and add the following code to create a Virtual Machine in the public network.
+2.  Open the `test-server-linux.tf` file and add the following code to create a Virtual Machine in the public network.
 
 ```
 # Create Test Server in Public VPC
@@ -307,24 +307,24 @@ output "test-server-linux-internal-ip" {
 
 <aside><p><strong>Note: </strong>The output variables will return the name, and internal and external IP addresses for the machine created. Also, this machine is tagged with the "allow-ssh" tag, so you can connect to it. Lastly, take a look at the code in the network_interface section that configures this machine to be in the public network your created earlier.</p></aside>
 
-1.  Run the Terraform plan and apply commands as you did earlier to create this machine. If an errors appears you may need to run terraform ini again before running the other two commands.
+3.  Run the Terraform plan and apply commands as you did earlier to create this machine. If an errors appears you may need to run terraform ini again before running the other two commands.
 
-1. When the commands complete you should see the VM name, and internal and external IP addresses. From the Cloud Shell terminal make sure you can ping the external IP address of that machine. 
+4. When the commands complete you should see the VM name, and internal and external IP addresses. From the Cloud Shell terminal make sure you can ping the external IP address of that machine. 
 
-1.  In the Console, go to the Compute Engine service. You should see the VM you just created. Click the SSH button to make sure your firewall rule works. Exit the ssh session.
+5.  In the Console, go to the Compute Engine service. You should see the VM you just created. Click the SSH button to make sure your firewall rule works. Exit the ssh session.
 
-1.  Run the Terraform destroy command to delete everything you created thus far. 
+6.  Run the Terraform destroy command to delete everything you created thus far. 
 
 
 ## Task 4. Use Terraform to create a private network
 
 1. Use the configuration of the Public network as a guide and create a second Private network. <p>In the `variables.tf` file, add a variable for the private subnet IP CIDR range, and set its value in the `terraform.tfvars` file. </p><p>Duplicate the `vpc-network-public.tf` file and change the names and variables appropriately. </p>
 
-1.  Using the public firewall rules as a guide, add firewall rules for the private network. In the `source_ranges` section, don't allow traffic from all sources, only allow traffic from the public subnet IP CIDR range.
+2.  Using the public firewall rules as a guide, add firewall rules for the private network. In the `source_ranges` section, don't allow traffic from all sources, only allow traffic from the public subnet IP CIDR range.
 
-1.  Create a test server in the private network using the public one as a guide.
+3.  Create a test server in the private network using the public one as a guide.
 
-1.  Once you have everything created you should be able to SSH into the public test server. The server in the private network won't be accesible yet. You will fix that in the next lab.
+4.  Once you have everything created you should be able to SSH into the public test server. The server in the private network won't be accesible yet. You will fix that in the next lab.
 
 
 

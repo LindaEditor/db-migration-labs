@@ -33,17 +33,17 @@ __OPEN__ to select your project.
 
 1.  In the Navigation menu ( ![Menu](img/menu.png) ), click on **Kubernetes Engine > Clusters**.
 
-1.  Click on the **Create Cluster** button. Accept all the defaults and click the **Create** button at the bottom. It will take a couple minutes for the cluster to be ready. 
+2.  Click on the **Create Cluster** button. Accept all the defaults and click the **Create** button at the bottom. It will take a couple minutes for the cluster to be ready. 
 
-1.  When the cluster is ready, click on the **Connect** button. 
+3.  When the cluster is ready, click on the **Connect** button. 
 
 ![Connect](img/connect-button.png)
 
-1.  Notice the command for connecting to the cluster is specified. Click the **Run in Cloud Shell** button to open Cloud Shell with the command entered. Hit Enter to run the command.
+4.  Notice the command for connecting to the cluster is specified. Click the **Run in Cloud Shell** button to open Cloud Shell with the command entered. Hit Enter to run the command.
 
 ![Run](img/run-in-cloud-shell.png)
 
-1.  Now you are connected to the cluster and ready to deploy a program. Test the connection with the following kubectl command. This command should return a list of the three virtual machines that make up this cluster. 
+5.  Now you are connected to the cluster and ready to deploy a program. Test the connection with the following kubectl command. This command should return a list of the three virtual machines that make up this cluster. 
 
 ```
 kubectl get nodes
@@ -61,24 +61,24 @@ You just created a Kubernetes cluster, next you will configure and deploy MySQL 
 kubectl create secret generic mysql-secrets --from-literal=ROOT_PASSWORD="password"
 ```
 
-1.  Create a folder for the configuration files you will create and change to it.
+2.  Create a folder for the configuration files you will create and change to it.
 
 ```
 mkdir mysql-gke
 cd mysql-gke
 ```
 
-1.  Now you will create the Kubernetes configuration files. In Cloud Shell, click on the **Open Editor** button. 
+3.  Now you will create the Kubernetes configuration files. In Cloud Shell, click on the **Open Editor** button. 
 
 ![Open Editor](img/open-editor.png)
 
-1. Make sure you click on the `mysql-gke` folder on the left. 
+4. Make sure you click on the `mysql-gke` folder on the left. 
 
 ![Editor](img/editor.png)
 
 <p>Select **File > New File** and name the file `volume.yaml`.</P>
 
-1.  Enter the following YAML code and save the file. This reserves 1 gigabyte of disk space for the MySQL database.
+5.  Enter the following YAML code and save the file. This reserves 1 gigabyte of disk space for the MySQL database.
 
 ```
 apiVersion: v1
@@ -95,7 +95,7 @@ spec:
 
 <aside><p><strong>Note </strong>the name `mysql-data-disk`. This name will be used in the next file.</p></aside>
 
-1.  Create another new file called `deployment.yaml`, and paste the following code into it. This configures the MySQL database. 
+6.  Create another new file called `deployment.yaml`, and paste the following code into it. This configures the MySQL database. 
 
 ```
 apiVersion: apps/v1
@@ -145,7 +145,7 @@ spec:
 *  Starting at line 26, an environment variable is created for the database root password using the secret you created earlier. There are also variables to create a test user with a simple password. 
 *  In the last line, notice the disk space you allocated in the previous file is used. 
 
-1.  The database needs a service so it can be accessed. Create a third file called `service.yaml` and enter the followng into it. 
+7.  The database needs a service so it can be accessed. Create a third file called `service.yaml` and enter the followng into it. 
 
 ```
 apiVersion: v1
@@ -163,9 +163,9 @@ spec:
 
 <aside><p><strong>Note:</strong> This creates a service that provides access to the database from within the cluster, that forwards requests to the MySQL database.</p></aside>
 
-1.  In Cloud Shell, click the **Open Terminal** button to return to the command line. Make sure you are in the right folder and type `ls` to verify you have your three YAML files. 
+8.  In Cloud Shell, click the **Open Terminal** button to return to the command line. Make sure you are in the right folder and type `ls` to verify you have your three YAML files. 
 
-1.  Now enter the following kubectl commads to deploy your database.
+9.  Now enter the following kubectl commads to deploy your database.
 
 ```
 kubectl apply -f volume.yaml
@@ -173,41 +173,41 @@ kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 ```
 
-1.  Wait a minute for the resources to be created. Then enter the following command. ***You should see the pod running that has your database installed. If it is not running yet, wait a little while longer and try again.***
+10.  Wait a minute for the resources to be created. Then enter the following command. ***You should see the pod running that has your database installed. If it is not running yet, wait a little while longer and try again.***
 
 ```
 kubectl get pods
 ```
 
-1. The database is only accessible from inside the cluster. At this point there are no client applications. So, you will just access the pod with the database and see if it is running. <p>Copy the name of the pod obtained from the last command to the clipboard. It will begin with `mysql-deployment-` followed by a unique string. Enter the following command, ***but replace the pod name with your pod's name***.
+11. The database is only accessible from inside the cluster. At this point there are no client applications. So, you will just access the pod with the database and see if it is running. <p>Copy the name of the pod obtained from the last command to the clipboard. It will begin with `mysql-deployment-` followed by a unique string. Enter the following command, ***but replace the pod name with your pod's name***.
 
 ```
 kubectl exec -it mysql-deployment-76fdc44468-rfhbp /bin/bash
 ```
 
-1.  Now you're at a bash prompt within the MySQL pod. Enter the following to log into MySQL, when prompted, enter the password `password`.
+12.  Now you're at a bash prompt within the MySQL pod. Enter the following to log into MySQL, when prompted, enter the password `password`.
 
 ```
 mysql -u root -p
 ```
 
-1.  This should give you a mysql prompt. Run the following command.
+13.  This should give you a mysql prompt. Run the following command.
 
 ```
 show databases;
 ```
 
-1.  Create a new database.
+14.  Create a new database.
 
 ```
 create database pets;
 ```
 
-1.  See if your database was created by entering `show databases;` again.
+15.  See if your database was created by entering `show databases;` again.
 
-1.  Type `exit` to exit MySQL, type `exit` again to return to the Cloud Shell command prompt.
+16.  Type `exit` to exit MySQL, type `exit` again to return to the Cloud Shell command prompt.
 
-1.  You can now remove everything that was created by entering the following commands.
+17.  You can now remove everything that was created by entering the following commands.
 
 ```
 kubectl delete -f service.yaml
@@ -228,7 +228,7 @@ You have deployed a MySQL database to a Kubernetes cluster using Kubernetes conf
 helm init
 ```
 
-1.  To use Helm, a service account has to be created on the cluster that gives it administrative rights. Enter the following commands to add this service account with the required permissions.
+2.  To use Helm, a service account has to be created on the cluster that gives it administrative rights. Enter the following commands to add this service account with the required permissions.
 
 ```
 kubectl create serviceaccount --namespace kube-system tiller
@@ -236,29 +236,29 @@ kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admi
 kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
 ```
 
-1.  Now enter the following command to update the Helm packages.
+3.  Now enter the following command to update the Helm packages.
 
 ```
 helm repo update 
 ```
 
-1.  Now try installing MySQL using Helm.
+4.  Now try installing MySQL using Helm.
 
 ```
 helm install stable/mysql
 ```
 
-1.  Read the output from the Helm install command and try connecting to your database using the instructions provided.
+5.  Read the output from the Helm install command and try connecting to your database using the instructions provided.
 
-1.  Once you get connected to the database, exit to return to the Cloud Shell command prompt. 
+6.  Once you get connected to the database, exit to return to the Cloud Shell command prompt. 
 
-1.  To see your Helm deployment enter the following command. 
+7.  To see your Helm deployment enter the following command. 
 
 ```
 helm ls
 ```
 
-1.  Notice, the deployment has an auto-generated name like `intent-spaniel` or `smiling-penguin`. To delete the depoyment enter the following command ***but replace the deployment name shown with yours***.
+8.  Notice, the deployment has an auto-generated name like `intent-spaniel` or `smiling-penguin`. To delete the depoyment enter the following command ***but replace the deployment name shown with yours***.
 
 ```
 helm delete intent-spaniel

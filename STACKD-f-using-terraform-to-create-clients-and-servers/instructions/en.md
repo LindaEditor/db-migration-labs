@@ -34,27 +34,27 @@ __OPEN__ to select your project.
 
 1.  In the Navigation menu ( ![Menu](img/menu.png) ), click on **Home**.
 
-1.  In the **Project info** section, find your Project ID and copy and paste it into a text file. You will need it later.
+2.  In the **Project info** section, find your Project ID and copy and paste it into a text file. You will need it later.
 
-1.  In the Console, click on the **Activate Cloud Shell** icon in the upper right of the console. ![Cloud Shell](img/CloudShell.png) <p>The Cloud Shell terminal will open in a pane at the bottom.</p>
+3.  In the Console, click on the **Activate Cloud Shell** icon in the upper right of the console. ![Cloud Shell](img/CloudShell.png) <p>The Cloud Shell terminal will open in a pane at the bottom.</p>
 
-1.  Enter the following command to clone a GitHub repository which includes a completed version of the last lab. 
+4.  Enter the following command to clone a GitHub repository which includes a completed version of the last lab. 
 
 ```
 git clone https://github.com/drehnstrom/db-migration-course
 ```
 
-1.  Change to the following folder.
+5.  Change to the following folder.
 
 ```
 cd ~/db-migration-course/terraform-clients-servers/
 ```
 
-1.  Type `ls` and you will see this folder has the Terraform files completed from the last lab. 
+6.  Type `ls` and you will see this folder has the Terraform files completed from the last lab. 
 
-1.  Click on the **Open Editor** button. Open the `terraform.tfvars` file in the `db-migration-course/terraform-clients-servers/` folder.<p>Change the `project_id` variable to match your project's ID.</p>
+7.  Click on the **Open Editor** button. Open the `terraform.tfvars` file in the `db-migration-course/terraform-clients-servers/` folder.<p>Change the `project_id` variable to match your project's ID.</p>
 
-1. First, you will create a Debian Linux machine in the private network. Add a file named `vm-mysql-server.tf` and paste the following Terraform code into it. 
+8. First, you will create a Debian Linux machine in the private network. Add a file named `vm-mysql-server.tf` and paste the following Terraform code into it. 
 
 ```
 # Create a MySQL Server in Private VPC
@@ -90,7 +90,7 @@ output "mysql-server-internal-ip" {
 }
 ```
 
-1. Now, you will create a machine in the public network that use can use to administrate that server. Add a file named `vm-mysql-client.tf` and paste the following Terraform code into it. 
+9. Now, you will create a machine in the public network that use can use to administrate that server. Add a file named `vm-mysql-client.tf` and paste the following Terraform code into it. 
 
 ```
 # Create MySQL Client in Public VPC
@@ -130,7 +130,7 @@ output "mysql-client-internal-ip" {
 <aside><p><strong>Note: </strong>Since this server is in the public network, you will be able to SSH into it. Once there, you will be able to SSH into the MySQL Server in the private network to administrate it. </p></aside>
 
 
-1. Lastly, you need to create a firewall rule to allow communication to the MySQL Server from the public network. Open the file `vpc-firewall-rules-private.tf` and add the following firewall rule to the end. 
+10. Lastly, you need to create a firewall rule to allow communication to the MySQL Server from the public network. Open the file `vpc-firewall-rules-private.tf` and add the following firewall rule to the end. 
 
 ```
 # allow MySQL only from public subnet
@@ -148,14 +148,14 @@ resource "google_compute_firewall" "private-allow-mysql" {
 }
 ```
 
-1.  Return the the Cloud Shell terminal and enter the following commands to initialize Terraform and create the plan. 
+11.  Return the the Cloud Shell terminal and enter the following commands to initialize Terraform and create the plan. 
 
 ```
 terraform init
 terraform plan
 ```
 
-1.  Assuming there are no errors, run the following command to create the resources. 
+12.  Assuming there are no errors, run the following command to create the resources. 
 
 ```
 terraform apply -auto-approve
@@ -165,11 +165,11 @@ terraform apply -auto-approve
 
 1.  When the Terrform process completes, in the Navigation menu ( ![Menu](img/menu.png) ), click on **Compute Engine**. You should have a number of machines listed. 
 
-1.  Find the `mysql-server-` machine, and make note of its internal IP address (*it is probably 10.2.2.3*). 
+2.  Find the `mysql-server-` machine, and make note of its internal IP address (*it is probably 10.2.2.3*). 
 
-1.  Find the `mysql-client-` machine, and click the SSH button next to it to connect to that machine. 
+3.  Find the `mysql-client-` machine, and click the SSH button next to it to connect to that machine. 
 
-1. Once you're connected to the client, then use the following command to SSH from that machine to the server making sure the IP address is correct. <p>When prompted, say 'yes'.</p> 
+4. Once you're connected to the client, then use the following command to SSH from that machine to the server making sure the IP address is correct. <p>When prompted, say 'yes'.</p> 
 
 ```
 ssh 10.2.2.3
@@ -177,20 +177,20 @@ ssh 10.2.2.3
 
 <aside><p><strong>Note: </strong>At this point you need to install MySQL on the server. The problem is, because the Server has no External IP address, it has no access to the internet. So, you can't run the command to install MySQL. You will fix that now by adding a NAT using the Google Cloud NAT service. </p></aside>
 
-1.  Try the following command and you will see it doesn't work. It will fail when trying to access the Internet.
+5.  Try the following command and you will see it doesn't work. It will fail when trying to access the Internet.
 
 ```
 sudo apt install -y mysql-server
 ```
 
-1.  Type Ctrl+c to end the command.
+6.  Type Ctrl+c to end the command.
 
 
-1.  Go back to the Console, and navigate to **Network services > Cloud NAT**.
+7.  Go back to the Console, and navigate to **Network services > Cloud NAT**.
 
-1. Click on the **Get started** button. You could create the NAT right here by filling in the form. However, that would not be reproducable. Let's do this in Terraform instead. Click the **Cancel** button.
+8. Click on the **Get started** button. You could create the NAT right here by filling in the form. However, that would not be reproducable. Let's do this in Terraform instead. Click the **Cancel** button.
 
-1.  Go back to the Cloud Shell Code Editor. In the `db-migration-course/terraform-clients-servers` folder, add a file called `cloud-nat.tf`. Add the following Terraform code to that file.
+9.  Go back to the Cloud Shell Code Editor. In the `db-migration-course/terraform-clients-servers` folder, add a file called `cloud-nat.tf`. Add the following Terraform code to that file.
 
 ```
 resource "google_compute_router" "nat-router" {
@@ -217,36 +217,36 @@ resource "google_compute_router_nat" "private-nat" {
 }
 ```
 
-1.  Retrun the the Cloud Shell Terminal and run `terraform plan` and make sure you have no errors. 
+10.  Return the the Cloud Shell Terminal and run `terraform plan` and make sure you have no errors. 
 
-1.  Run `terraform apply -auto-approve` to create the NAT.
+11.  Run `terraform apply -auto-approve` to create the NAT.
 
-1.  Return to your SSH window that is connected to the MySQL Server. Run the following commands to install MySQL (*this time it should work*).
+12.  Return to your SSH window that is connected to the MySQL Server. Run the following commands to install MySQL (*this time it should work*).
 
 ```
 sudo apt-get update
 sudo apt-get install -y mysql-server
 ```
 
-1.  Enter the following command to ensure MySQL is running.
+13.  Enter the following command to ensure MySQL is running.
 
 ```
 sudo systemctl status mysql
 ```
 
-1.  Now create a password for the root user with the following command. The inital password will be blank. Follow the instructions to create a password for root using a password you will remember. Say `Yes` to all the remaining prompts.
+14.  Now create a password for the root user with the following command. The inital password will be blank. Follow the instructions to create a password for root using a password you will remember. Say `Yes` to all the remaining prompts.
 
 ```
 sudo mysql_secure_installation
 ```
 
-1.  Now log onto the database using the root account with the following command. Enter your password when prompted. 
+15.  Now log onto the database using the root account with the following command. Enter your password when prompted. 
 
 ```
 sudo mysql -u root -p
 ```
 
-1. You will need a user account to login with from the client machine. Use the following command to create a user named `fred` with the password `password`.
+16. You will need a user account to login with from the client machine. Use the following command to create a user named `fred` with the password `password`.
 
 ```
 CREATE USER 'fred'@'%' IDENTIFIED BY 'password';
@@ -254,29 +254,29 @@ GRANT ALL PRIVILEGES ON * . * TO 'fred'@'%';
 FLUSH PRIVILEGES;
 ```
 
-1. Type `exit` to exit the MySQL client. 
+17. Type `exit` to exit the MySQL client. 
 
-1.  By default the database server only listens for connections on the local machine. A quick fix to the configuration will change that. Use the following command to open the configuration file in the Nano text editor. 
+18.  By default the database server only listens for connections on the local machine. A quick fix to the configuration will change that. Use the following command to open the configuration file in the Nano text editor. 
 
 ```
 sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf 
 ```
 
-1.  Find the line shown below and comment it out.  
+19.  Find the line shown below and comment it out.  
 
 ```
 bind-address            = 127.0.0.1
 ```
 
-1. Type Ctrl-x to exit and answer "y" when prompted to save your changes. 
+20. Type Ctrl-x to exit and answer "y" when prompted to save your changes. 
 
-1. Ener the follwing command to restart the database. 
+21. Ener the follwing command to restart the database. 
 
 ```
 sudo /etc/init.d/mysql restart
 ```
 
-1.  Type `exit` again to leave the server and return the client VM.
+22.  Type `exit` again to leave the server and return the client VM.
 
 ## Task 3. Connect to the database from a client
 
@@ -287,15 +287,15 @@ sudo apt-get update
 sudo apt-get install -y mysql-client
 ```
 
-1. Now try to connect to your database using the following command.
+2. Now try to connect to your database using the following command.
 
 ```
 mysql -h 10.2.2.3 -u fred -p'password'
 ```
 
-1. You should get conected. At this point there's no database, so there's nothing else to do, but you have a complete solution in place. <p>Your database server is in a secure network with no public access. You have a Linux machine in the public network that can be used to administrate the database, and connect to the machine using the MySQL client software.
+3. You should get conected. At this point there's no database, so there's nothing else to do, but you have a complete solution in place. <p>Your database server is in a secure network with no public access. You have a Linux machine in the public network that can be used to administrate the database, and connect to the machine using the MySQL client software.
 
-1.  Close your SSH session. Then, return to the Cloud Shell terminal. Enter the following command to delete everything you create earlier in the lab.
+4.  Close your SSH session. Then, return to the Cloud Shell terminal. Enter the following command to delete everything you create earlier in the lab.
 
 ```
 terraform destroy -auto-approve
