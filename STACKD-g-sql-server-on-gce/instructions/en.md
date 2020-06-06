@@ -8,9 +8,9 @@ In this lab, you will provision a SQL Server machine in a private network. Then,
 
 In this lab, you will learn how to perform the following tasks:
 
-*   Create Client and Server VMs
-*   Administrate your Database Server
-*   Connect to the database from a client
+*   Create a SQL Server Database, plus Admin and Client VMs
+*   Administrate your SQL Server database
+*   Connect to the database from the client
 
 ## Task 0. Lab Setup
 
@@ -29,7 +29,7 @@ __OPEN__ to select your project.
 
 ![[/fragments/cloudshell]]
 
-## Task 1. Create Client and Server VMs
+## Task 1. Create a SQL Server Database, plus Admin and Client VMs
 
 1.  In the Navigation menu ( ![Menu](img/menu.png) ), click on **Home**.
 
@@ -199,7 +199,7 @@ terraform plan
 terraform apply -auto-approve
 ```
 
-## Task 2. Administrate your Database Server
+## Task 2. Administrate your SQL Server database
 
 1.  When the Terrform process completes, in the Navigation menu ( ![Menu](img/menu.png) ), click on **Compute Engine**.
 
@@ -247,7 +247,7 @@ Password:
 
 14.  Close the remote desktop session to the SQL Server machine and the RDP connection to the Windows Admin machine.
 
-## Task 3. Connect to the database from a client
+## Task 3. Connect to the database from the client
 
 1.  Go back to the Google Cloud Console and the Compute Engine service. 
 
