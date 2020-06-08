@@ -129,7 +129,7 @@ You just create a MySQL database server using Ubuntu Linux.
 
 ![Set Windows PW](img/set-win-pw.png)
 
-<aside><p><strong>Note:</strong>If you get to this point too fast, the Windows server may not be ready even though there is a green check in the console indcating it is. Wait a couple minutes and try again.</p></aside>
+<aside><p><strong>Note: </strong>If you get to this point too fast, the Windows server may not be ready even though there is a green check in the console indcating it is. Wait a couple minutes and try again.</p></aside>
 
 5.  Change the Username to your first name and click the **Set** button. Copy and paste the generated password into a text file so you don't lose it. 
 
