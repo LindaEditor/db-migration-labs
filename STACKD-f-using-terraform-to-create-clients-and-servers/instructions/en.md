@@ -289,10 +289,10 @@ sudo apt-get update
 sudo apt-get install -y mysql-client
 ```
 
-2. Now try to connect to your database using the following command.
+2. Now try to connect to your database using the following command (***make sure you are using your server's IP address though***).
 
 ```
-mysql -h 10.2.2.3 -u fred -p'password'
+mysql -h 10.2.2.2 -u fred -p'password'
 ```
 
 3. You should get conected. At this point there's no database, so there's nothing else to do, but you have a complete solution in place. <p>Your database server is in a secure network with no public access. You have a Linux machine in the public network that can be used to administrate the database, and connect to the machine using the MySQL client software.
