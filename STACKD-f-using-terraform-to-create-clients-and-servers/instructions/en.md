@@ -167,14 +167,14 @@ terraform apply -auto-approve
 
 1.  When the Terrform process completes, in the Navigation menu ( ![Menu](img/menu.png) ), click on **Compute Engine**. You should have a number of machines listed. 
 
-2.  Find the `mysql-server-` machine, and make note of its internal IP address (*it is probably 10.2.2.3*). 
+2.  Find the `mysql-server-` machine, and make note of its internal IP address (*it is either 10.2.2.2 or 10.2.2.3*). 
 
 3.  Find the `mysql-client-` machine, and click the SSH button next to it to connect to that machine. 
 
 4. Once you're connected to the client, then use the following command to SSH from that machine to the server making sure the IP address is correct. <p>When prompted, say 'yes'.</p> 
 
 ```
-ssh 10.2.2.3
+ssh 10.2.2.2
 ```
 
 <aside><p><strong>Note: </strong>At this point you need to install MySQL on the server. The problem is, because the Server has no External IP address, it has no access to the internet. So, you can't run the command to install MySQL. You will fix that now by adding a NAT using the Google Cloud NAT service. </p></aside>
@@ -230,53 +230,53 @@ sudo apt-get update
 sudo apt-get install -y mysql-server
 ```
 
-13.  Enter the following command to ensure MySQL is running.
-
-```
-sudo systemctl status mysql
-```
-
-14.  Now create a password for the root user with the following command. The inital password will be blank. Follow the instructions to create a password for root using a password you will remember. Say `Yes` to all the remaining prompts.
-
-```
-sudo mysql_secure_installation
-```
-
-15.  Now log onto the database using the root account with the following command. Enter your password when prompted. 
-
-```
-sudo mysql -u root -p
-```
-
-16. You will need a user account to login with from the client machine. Use the following command to create a user named `fred` with the password `password`.
-
-```
-CREATE USER 'fred'@'%' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON * . * TO 'fred'@'%';
-FLUSH PRIVILEGES;
-```
-
-17. Type `exit` to exit the MySQL client. 
-
-18.  By default the database server only listens for connections on the local machine. A quick fix to the configuration will change that. Use the following command to open the configuration file in the Nano text editor. 
+13.  By default the database server only listens for connections on the local machine. A quick fix to the configuration will change that. Use the following command to open the configuration file in the Nano text editor. 
 
 ```
 sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf 
 ```
 
-19.  Find the line shown below and comment it out.  
+14.  Find the line shown below and **comment it out**.  
 
 ```
 bind-address            = 127.0.0.1
 ```
 
-20. Type Ctrl-x to exit and answer "y" when prompted to save your changes. 
+15.  Type Ctrl-x to exit and answer "y" when prompted to save your changes. 
 
-21. Ener the follwing command to restart the database. 
+16.  Enter the follwing command to restart the database. 
 
 ```
 sudo /etc/init.d/mysql restart
 ```
+
+17.  Enter the following command to ensure MySQL is running.
+
+```
+sudo systemctl status mysql
+```
+
+18.  Now create a password for the root user with the following command. ***The inital password will be blank***. Follow the instructions to create a password for root using a password you will remember. Say `Yes` to all the remaining prompts.
+
+```
+sudo mysql_secure_installation
+```
+
+19.  Now log onto the database using the root account with the following command. Enter your password when prompted. 
+
+```
+sudo mysql -u root -p
+```
+
+20.  You will need a user account to login with from the client machine. Use the following command to create a user named `fred` with the password `password`.
+
+```
+CREATE USER 'fred'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'fred'@'%';
+FLUSH PRIVILEGES;
+```
+
+21.  Type `exit` to exit the MySQL client. 
 
 22.  Type `exit` again to leave the server and return the client VM.
 
